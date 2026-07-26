@@ -1,0 +1,356 @@
+[
+  {
+    "id": "CHUNCHEON_TOUR_API:1",
+    "title": "구곡폭포",
+    "summary": "봉화산 근처 아홉구비를 돌아 떨어지는 구곡폭포와 탄성을 자아내는 하늘벽 바위 등 자연경관이 출중한 곳이며, 깔닥재를 넘으면 자연부락인 문배마을까지 볼 수 있다.",
+    "category": "TOUR",
+    "organization": {
+      "name": "강원도 춘천시청",
+      "department": null
+    },
+    "dates": {
+      "published_at": null,
+      "recruit_start_at": null,
+      "recruit_end_at": null,
+      "activity_start_at": null,
+      "activity_end_at": null
+    },
+    "targets": [],
+    "topics": [
+      "자연",
+      "산"
+    ],
+    "location": {
+      "region": "춘천시",
+      "address": "강원도 춘천시 남산면 강촌구곡길 254",
+      "operation_type": "OFFLINE"
+    },
+    "status": "ALWAYS",
+    "thumbnail_url": null,
+    "source_logo_url": null,
+    "source": "춘천시 관내 관광지 API",
+    "source_url": null,
+    "details": {
+      "contact": "033-250-3668",
+      "parking": "242",
+      "description": "봉화산 근처 아홉구비를 돌아 떨어지는 구곡폭포와 탄성을 자아내는 하늘벽 바위 등 자연경관이 출중한 곳이며, 깔닥재를 넘으면 자연부락인 문배마을까지 볼 수 있다.",
+      "tour_type": "관광지",
+      "latitude": 37.797033,
+      "longitude": 127.615852,
+      "facilities": {
+        "convenience": "관리사무소+주차장+공중화장실 4동+도로",
+        "accommodations": "휴양콘도미니엄+가족호텔",
+        "amusement": "골프장+스키장",
+        "recreational": "미술관+박물관",
+        "support": "전용숙소+연수시설"
+      }
+    },
+    "raw_fields": {
+      "tourNo": 1,
+      "tourNm": "구곡폭포",
+      "tourGubun": "관광지",
+      "newAddr": "강원도 춘천시 남산면 강촌구곡길 254",
+      "oldAddr": "강원도 춘천시 남산면 강촌리 432",
+      "latitude": 37.797033,
+      "longtitude": 127.615852,
+      "area": "2,423,000",
+      "convenienceFacility": "관리사무소+주차장+공중화장실 4동+도로",
+      "accommodations": "휴양콘도미니엄+가족호텔",
+      "amusementFacility": "골프장+스키장",
+      "recreationalFacility": "미술관+박물관",
+      "receptionFacility": "",
+      "supportFacility": "전용숙소+연수시설",
+      "designationDt": "1981-02-13",
+      "accommodatedNum": "1000",
+      "parkinglotNum": "242",
+      "info": "봉화산 근처 아홉구비를 돌아 떨어지는 구곡폭포와 탄성을 자아내는 하늘벽 바위 등 자연경관이 출중한 곳이며, 깔닥재를 넘으면 자연부락인 문배마을까지 볼 수 있다.",
+      "managementNum": "033-250-3668",
+      "managementNm": "강원도 춘천시청",
+      "updateDt": "2022-07-20T15:00:00.000+00:00"
+    },
+    "collected_at": "2026-07-26T00:18:47+09:00"
+  },
+  {
+    "id": "CHUNCHEON_TOUR_API:2",
+    "title": "춘천호반",
+    "summary": "춘천댐은 신북면 용산리와 서면 오월리 사이의 북한강 본류에 건설된 수력 발전소로 높이는 무려 40m에 이르고 담수 면적은 총면적 17㎢인 거대한 댐이다. 화천으로부터 내려오는 물길을 막아 설립된 춘천호 주변은 맑은 물과 푸른 자연환경을 지니고 있어 아름다움을 자랑한다. 또한, 춘천댐의 위 물길과 아래 물길 일대에는 유원지가 만들어져서 식당, 방갈로, 원두막",
+    "category": "TOUR",
+    "organization": {
+      "name": "강원도 춘천시청",
+      "department": null
+    },
+    "dates": {
+      "published_at": null,
+      "recruit_start_at": null,
+      "recruit_end_at": null,
+      "activity_start_at": null,
+      "activity_end_at": null
+    },
+    "targets": [],
+    "topics": [
+      "자연",
+      "호수",
+      "강",
+      "캠핑",
+      "가족"
+    ],
+    "location": {
+      "region": "춘천시",
+      "address": "강원도 춘천시 서면 경춘로 1401-25",
+      "operation_type": "OFFLINE"
+    },
+    "status": "ALWAYS",
+    "thumbnail_url": null,
+    "source_logo_url": null,
+    "source": "춘천시 관내 관광지 API",
+    "source_url": null,
+    "details": {
+      "contact": "033-245-2211",
+      "parking": "202",
+      "description": "춘천댐은 신북면 용산리와 서면 오월리 사이의 북한강 본류에 건설된 수력 발전소로 높이는 무려 40m에 이르고 담수 면적은 총면적 17㎢인 거대한 댐이다. 화천으로부터 내려오는 물길을 막아 설립된 춘천호 주변은 맑은 물과 푸른 자연환경을 지니고 있어 아름다움을 자랑한다. 또한, 춘천댐의 위 물길과 아래 물길 일대에는 유원지가 만들어져서 식당, 방갈로, 원두막, 야영캠프장, 낚시터 등 편의시설이 되어 있어 관광객들이 애용하고 있다. 유원지 숲 곳곳에 가족소풍을 즐길 만한 공간도 있어 가족끼리의 여행 장소로 제격이다.",
+      "tour_type": "관광지",
+      "latitude": 37.825714,
+      "longitude": 127.659368,
+      "facilities": {
+        "convenience": "도로+관리사무소 2동+주차장+화장실 3동+오수처리장+배수지",
+        "accommodations": "방갈로+야영캠프장",
+        "amusement": "낚시터+수영장",
+        "recreational": "유원지+박물관"
+      }
+    },
+    "raw_fields": {
+      "tourNo": 2,
+      "tourNm": "춘천호반",
+      "tourGubun": "관광지",
+      "newAddr": "강원도 춘천시 서면 경춘로 1401-25",
+      "oldAddr": "강원도 춘천시 서면 덕두원리 118-6",
+      "latitude": 37.825714,
+      "longtitude": 127.659368,
+      "area": "6,154,000",
+      "convenienceFacility": "도로+관리사무소 2동+주차장+화장실 3동+오수처리장+배수지",
+      "accommodations": "방갈로+야영캠프장",
+      "amusementFacility": "낚시터+수영장",
+      "recreationalFacility": "유원지+박물관",
+      "receptionFacility": "",
+      "supportFacility": "",
+      "designationDt": "1969-01-21",
+      "accommodatedNum": "1000",
+      "parkinglotNum": "202",
+      "info": "춘천댐은 신북면 용산리와 서면 오월리 사이의 북한강 본류에 건설된 수력 발전소로 높이는 무려 40m에 이르고 담수 면적은 총면적 17㎢인 거대한 댐이다. 화천으로부터 내려오는 물길을 막아 설립된 춘천호 주변은 맑은 물과 푸른 자연환경을 지니고 있어 아름다움을 자랑한다. 또한, 춘천댐의 위 물길과 아래 물길 일대에는 유원지가 만들어져서 식당, 방갈로, 원두막, 야영캠프장, 낚시터 등 편의시설이 되어 있어 관광객들이 애용하고 있다. 유원지 숲 곳곳에 가족소풍을 즐길 만한 공간도 있어 가족끼리의 여행 장소로 제격이다.",
+      "managementNum": "033-245-2211",
+      "managementNm": "강원도 춘천시청",
+      "updateDt": "2022-07-20T15:00:00.000+00:00"
+    },
+    "collected_at": "2026-07-26T00:18:47+09:00"
+  },
+  {
+    "id": "CHUNCHEON_TOUR_API:3",
+    "title": "청평사(춘천)",
+    "summary": "청평사 관광지는 시내에서 19km 지점에 있으며 소양호 선착장에서 선박을 이용하여 10분 정도 가면 청평사 관광지에 이른다. 계곡이 수려하여 등산객들이 즐겨 찾는 곳으로 계곡을 따라 오르다 보면 7m 높이의 아홉 가지 소리를 낸다는 구성폭포가 있다. 그밖에 청평사 고려 정원 영지, 청평사 회전문, 3층 석탑 등이 있다. 이곳을 계속 오르면 오봉산 등산로와 ",
+    "category": "TOUR",
+    "organization": {
+      "name": "강원도 춘천시청",
+      "department": null
+    },
+    "dates": {
+      "published_at": null,
+      "recruit_start_at": null,
+      "recruit_end_at": null,
+      "activity_start_at": null,
+      "activity_end_at": null
+    },
+    "targets": [],
+    "topics": [
+      "산",
+      "음식"
+    ],
+    "location": {
+      "region": "춘천시",
+      "address": "강원도 춘천시 오봉산길 810",
+      "operation_type": "OFFLINE"
+    },
+    "status": "ALWAYS",
+    "thumbnail_url": null,
+    "source_logo_url": null,
+    "source": "춘천시 관내 관광지 API",
+    "source_url": null,
+    "details": {
+      "contact": "033-244-1095",
+      "parking": "137",
+      "description": "청평사 관광지는 시내에서 19km 지점에 있으며 소양호 선착장에서 선박을 이용하여 10분 정도 가면 청평사 관광지에 이른다. 계곡이 수려하여 등산객들이 즐겨 찾는 곳으로 계곡을 따라 오르다 보면 7m 높이의 아홉 가지 소리를 낸다는 구성폭포가 있다. 그밖에 청평사 고려 정원 영지, 청평사 회전문, 3층 석탑 등이 있다. 이곳을 계속 오르면 오봉산 등산로와 연결된다. 청평사 관광지의 초입에는 다양한 먹거리가 있어 춘천의 토속음식들을 만나볼 수 있다.",
+      "tour_type": "관광지",
+      "latitude": 37.986313,
+      "longitude": 127.808407,
+      "facilities": {
+        "convenience": "도로+주차장+하수처리장+관리사무소 2동+매표소 2동+화장실 3동+다목적광장",
+        "accommodations": "휴양콘도미니엄+여관+펜션",
+        "amusement": "계곡+구성폭포",
+        "recreational": "오봉산+소양댐+야영장+전망대"
+      }
+    },
+    "raw_fields": {
+      "tourNo": 3,
+      "tourNm": "청평사(춘천)",
+      "tourGubun": "관광지",
+      "newAddr": "강원도 춘천시 오봉산길 810",
+      "oldAddr": "강원도 춘천시 북산면 청평리 673",
+      "latitude": 37.986313,
+      "longtitude": 127.808407,
+      "area": "175,000",
+      "convenienceFacility": "도로+주차장+하수처리장+관리사무소 2동+매표소 2동+화장실 3동+다목적광장",
+      "accommodations": "휴양콘도미니엄+여관+펜션",
+      "amusementFacility": "계곡+구성폭포",
+      "recreationalFacility": "오봉산+소양댐+야영장+전망대",
+      "receptionFacility": "",
+      "supportFacility": "",
+      "designationDt": "1987-06-15",
+      "accommodatedNum": "1000",
+      "parkinglotNum": "137",
+      "info": "청평사 관광지는 시내에서 19km 지점에 있으며 소양호 선착장에서 선박을 이용하여 10분 정도 가면 청평사 관광지에 이른다. 계곡이 수려하여 등산객들이 즐겨 찾는 곳으로 계곡을 따라 오르다 보면 7m 높이의 아홉 가지 소리를 낸다는 구성폭포가 있다. 그밖에 청평사 고려 정원 영지, 청평사 회전문, 3층 석탑 등이 있다. 이곳을 계속 오르면 오봉산 등산로와 연결된다. 청평사 관광지의 초입에는 다양한 먹거리가 있어 춘천의 토속음식들을 만나볼 수 있다.",
+      "managementNum": "033-244-1095",
+      "managementNm": "강원도 춘천시청",
+      "updateDt": "2022-07-20T15:00:00.000+00:00"
+    },
+    "collected_at": "2026-07-26T00:18:47+09:00"
+  },
+  {
+    "id": "CHUNCHEON_TOUR_API:4",
+    "title": "신영",
+    "summary": "일상의 스트레스를 벗고, 위대한 자연 속에서 휴식의 옷으로 갈아입는 곳",
+    "category": "TOUR",
+    "organization": {
+      "name": "신영종합개발(주)",
+      "department": null
+    },
+    "dates": {
+      "published_at": null,
+      "recruit_start_at": null,
+      "recruit_end_at": null,
+      "activity_start_at": null,
+      "activity_end_at": null
+    },
+    "targets": [],
+    "topics": [
+      "자연"
+    ],
+    "location": {
+      "region": "춘천시",
+      "address": "강원 춘천시 동산면 종자리로 148-16 로드힐스 골프 앤 리조트",
+      "operation_type": "OFFLINE"
+    },
+    "status": "ALWAYS",
+    "thumbnail_url": null,
+    "source_logo_url": null,
+    "source": "춘천시 관내 관광지 API",
+    "source_url": null,
+    "details": {
+      "contact": "033-269-8888",
+      "parking": "0",
+      "description": "일상의 스트레스를 벗고, 위대한 자연 속에서 휴식의 옷으로 갈아입는 곳",
+      "tour_type": "관광단지",
+      "latitude": 37.74074,
+      "longitude": 127.727622,
+      "facilities": {
+        "convenience": "주차장+화장실+도로+전기시설+통신시설+상하수도시설+관광안내소+오수처리장",
+        "accommodations": "관광호텔+휴양콘도미니엄",
+        "amusement": "저류지+클럽하우스+수위실+스키하우스+전망대+슬로프",
+        "recreational": "커뮤니티센터",
+        "reception": "관광식당"
+      }
+    },
+    "raw_fields": {
+      "tourNo": 4,
+      "tourNm": "신영",
+      "tourGubun": "관광단지",
+      "newAddr": "강원 춘천시 동산면 종자리로 148-16 로드힐스 골프 앤 리조트",
+      "oldAddr": "강원도 춘천시 군자리 산245",
+      "latitude": 37.74074,
+      "longtitude": 127.727622,
+      "area": "1,694,696",
+      "convenienceFacility": "주차장+화장실+도로+전기시설+통신시설+상하수도시설+관광안내소+오수처리장",
+      "accommodations": "관광호텔+휴양콘도미니엄",
+      "amusementFacility": "저류지+클럽하우스+수위실+스키하우스+전망대+슬로프",
+      "recreationalFacility": "커뮤니티센터",
+      "receptionFacility": "관광식당",
+      "supportFacility": "",
+      "designationDt": "2010-08-01",
+      "accommodatedNum": "0",
+      "parkinglotNum": "0",
+      "info": "일상의 스트레스를 벗고, 위대한 자연 속에서 휴식의 옷으로 갈아입는 곳",
+      "managementNum": "033-269-8888",
+      "managementNm": "신영종합개발(주)",
+      "updateDt": "2022-07-20T15:00:00.000+00:00"
+    },
+    "collected_at": "2026-07-26T00:18:47+09:00"
+  },
+  {
+    "id": "CHUNCHEON_TOUR_API:5",
+    "title": "라비에벨",
+    "summary": "자연 원형의 생태가 그대로 살아 숨쉬고 최고의 코스와 함께 도전과 변화, 평온과 휴식을 동시에 만끽하실 수 있습니다",
+    "category": "TOUR",
+    "organization": {
+      "name": "코오롱글로벌㈜",
+      "department": null
+    },
+    "dates": {
+      "published_at": null,
+      "recruit_start_at": null,
+      "recruit_end_at": null,
+      "activity_start_at": null,
+      "activity_end_at": null
+    },
+    "targets": [],
+    "topics": [
+      "자연"
+    ],
+    "location": {
+      "region": "춘천시",
+      "address": "강원 춘천시 동산면 종자리로 436",
+      "operation_type": "OFFLINE"
+    },
+    "status": "ALWAYS",
+    "thumbnail_url": null,
+    "source_logo_url": null,
+    "source": "춘천시 관내 관광지 API",
+    "source_url": null,
+    "details": {
+      "contact": "033-245-7000",
+      "parking": "0",
+      "description": "자연 원형의 생태가 그대로 살아 숨쉬고 최고의 코스와 함께 도전과 변화, 평온과 휴식을 동시에 만끽하실 수 있습니다",
+      "tour_type": "관광단지",
+      "latitude": 37.743414,
+      "longitude": 127.746359,
+      "facilities": {
+        "convenience": "주차장+화장실+도로+광장+전기시설+통신시설+상하수도시설+관광안내소+오수처리장",
+        "accommodations": "한국전통호텔+관광호텔+휴양콘도미니엄",
+        "amusement": "클럽하우스+승마장+골프장+티하우스",
+        "recreational": "양회공연장+트레킹코스+전망대+수목원+체험농장+컨퍼런스센터+아울렛",
+        "reception": "관광식당"
+      }
+    },
+    "raw_fields": {
+      "tourNo": 5,
+      "tourNm": "라비에벨",
+      "tourGubun": "관광단지",
+      "newAddr": "강원 춘천시 동산면 종자리로 436",
+      "oldAddr": "강원도 춘천시 동산면 조양리 산199",
+      "latitude": 37.743414,
+      "longtitude": 127.746359,
+      "area": "4,843,796",
+      "convenienceFacility": "주차장+화장실+도로+광장+전기시설+통신시설+상하수도시설+관광안내소+오수처리장",
+      "accommodations": "한국전통호텔+관광호텔+휴양콘도미니엄",
+      "amusementFacility": "클럽하우스+승마장+골프장+티하우스",
+      "recreationalFacility": "양회공연장+트레킹코스+전망대+수목원+체험농장+컨퍼런스센터+아울렛",
+      "receptionFacility": "관광식당",
+      "supportFacility": "",
+      "designationDt": "2009-09-01",
+      "accommodatedNum": "0",
+      "parkinglotNum": "0",
+      "info": "자연 원형의 생태가 그대로 살아 숨쉬고 최고의 코스와 함께 도전과 변화, 평온과 휴식을 동시에 만끽하실 수 있습니다",
+      "managementNum": "033-245-7000",
+      "managementNm": "코오롱글로벌㈜",
+      "updateDt": "2022-07-20T15:00:00.000+00:00"
+    },
+    "collected_at": "2026-07-26T00:18:47+09:00"
+  }
+]

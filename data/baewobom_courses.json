@@ -1,0 +1,483 @@
+[
+  {
+    "id": "BAEWOBOHM:11603",
+    "title": "스마트폰으로 찍는 사진반",
+    "summary": "스마트폰으로 찍는 사진반: 사진, 스마트폰, 촬영 관련 성인 대상 오프라인 교육 프로그램",
+    "category": "EDUCATION",
+    "organization": {
+      "name": "춘천시 평생학습관",
+      "department": null
+    },
+    "dates": {
+      "published_at": null,
+      "recruit_start_at": "2026-07-20T00:00:00+09:00",
+      "recruit_end_at": "2026-07-31T23:59:59+09:00",
+      "activity_start_at": "2026-08-24T00:00:00+09:00",
+      "activity_end_at": "2026-12-07T23:59:59+09:00"
+    },
+    "targets": [
+      "성인"
+    ],
+    "topics": [
+      "사진",
+      "스마트폰",
+      "촬영"
+    ],
+    "location": {
+      "region": "춘천시",
+      "address": null,
+      "operation_type": "OFFLINE"
+    },
+    "status": "OPEN",
+    "thumbnail_url": null,
+    "source_logo_url": "https://bwb.chuncheon.go.kr/_user/img/layout/logo.svg",
+    "source": "춘천시 평생학습 통합플랫폼 배워봄",
+    "source_url": "https://bwb.chuncheon.go.kr/enrollment/detail-view/?lifelongGisuLectureId=11603",
+    "details": {
+      "applicant_count": 48,
+      "capacity": 30,
+      "schedule": "월 / 09:30 ~ 11:30",
+      "instructor": "이인호",
+      "application_method": "추첨식"
+    },
+    "raw_fields": {
+      "교육기관": "춘천시 평생학습관",
+      "교육기간": "2026-08-24 ~ 2026-12-07",
+      "교육시간": "월 / 09:30 ~ 11:30",
+      "접수기간": "2026-07-20 ~ 2026-07-31",
+      "모집인원": "48 / 30",
+      "대상자": "성인",
+      "강사": "이인호",
+      "목록 카드 텍스트": "추첨식 접수중 오프라인 관심강좌 스마트폰으로 찍는 사진반 사진 스마트폰 촬영 키워드 펼치기 교육기관 춘천시 평생학습관 교육기간 2026-08-24 ~ 2026-12-07 교육시간 월 / 09:30 ~ 11:30 접수기간 2026-07-20 ~ 2026-07-31 모집인원 48 / 30 대상자 성인 강사 이인호 수강신청",
+      "목록 URL": "https://bwb.chuncheon.go.kr/enrollment/category/?city%5B%5D=32010&status%5B%5D=receive"
+    },
+    "collected_at": "2026-07-25T12:41:49+09:00"
+  },
+  {
+    "id": "BAEWOBOHM:11602",
+    "title": "컴퓨터와 생성형 AI활용",
+    "summary": "컴퓨터와 생성형 AI활용: 인터넷, 정보검색, 컴퓨터, 활용 관련 성인 대상 오프라인 교육 프로그램",
+    "category": "EDUCATION",
+    "organization": {
+      "name": "춘천시 평생학습관",
+      "department": null
+    },
+    "dates": {
+      "published_at": null,
+      "recruit_start_at": "2026-07-20T00:00:00+09:00",
+      "recruit_end_at": "2026-07-31T23:59:59+09:00",
+      "activity_start_at": "2026-08-18T00:00:00+09:00",
+      "activity_end_at": "2026-12-03T23:59:59+09:00"
+    },
+    "targets": [
+      "성인"
+    ],
+    "topics": [
+      "인터넷",
+      "정보검색",
+      "컴퓨터",
+      "활용"
+    ],
+    "location": {
+      "region": "춘천시",
+      "address": null,
+      "operation_type": "OFFLINE"
+    },
+    "status": "OPEN",
+    "thumbnail_url": null,
+    "source_logo_url": "https://bwb.chuncheon.go.kr/_user/img/layout/logo.svg",
+    "source": "춘천시 평생학습 통합플랫폼 배워봄",
+    "source_url": "https://bwb.chuncheon.go.kr/enrollment/detail-view/?lifelongGisuLectureId=11602",
+    "details": {
+      "applicant_count": 28,
+      "capacity": 25,
+      "schedule": "화, 목 / 09:30 ~ 11:30",
+      "instructor": "정민주",
+      "application_method": "추첨식"
+    },
+    "raw_fields": {
+      "교육기관": "춘천시 평생학습관",
+      "교육기간": "2026-08-18 ~ 2026-12-03",
+      "교육시간": "화, 목 / 09:30 ~ 11:30",
+      "접수기간": "2026-07-20 ~ 2026-07-31",
+      "모집인원": "28 / 25",
+      "대상자": "성인",
+      "강사": "정민주",
+      "목록 카드 텍스트": "추첨식 접수중 오프라인 관심강좌 컴퓨터와 생성형 AI활용 인터넷 정보검색 컴퓨터 활용 키워드 펼치기 교육기관 춘천시 평생학습관 교육기간 2026-08-18 ~ 2026-12-03 교육시간 화, 목 / 09:30 ~ 11:30 접수기간 2026-07-20 ~ 2026-07-31 모집인원 28 / 25 대상자 성인 강사 정민주 수강신청",
+      "목록 URL": "https://bwb.chuncheon.go.kr/enrollment/category/?city%5B%5D=32010&status%5B%5D=receive"
+    },
+    "collected_at": "2026-07-25T12:41:49+09:00"
+  },
+  {
+    "id": "BAEWOBOHM:11599",
+    "title": "AI 미디어 콘텐츠 활용",
+    "summary": "AI 미디어 콘텐츠 활용: AI, 미디어, 콘텐츠 관련 성인 대상 오프라인 교육 프로그램",
+    "category": "EDUCATION",
+    "organization": {
+      "name": "춘천시 평생학습관",
+      "department": null
+    },
+    "dates": {
+      "published_at": null,
+      "recruit_start_at": "2026-07-20T00:00:00+09:00",
+      "recruit_end_at": "2026-07-31T23:59:59+09:00",
+      "activity_start_at": "2026-08-19T00:00:00+09:00",
+      "activity_end_at": "2026-12-07T23:59:59+09:00"
+    },
+    "targets": [
+      "성인"
+    ],
+    "topics": [
+      "AI",
+      "미디어",
+      "콘텐츠"
+    ],
+    "location": {
+      "region": "춘천시",
+      "address": null,
+      "operation_type": "OFFLINE"
+    },
+    "status": "OPEN",
+    "thumbnail_url": null,
+    "source_logo_url": "https://bwb.chuncheon.go.kr/_user/img/layout/logo.svg",
+    "source": "춘천시 평생학습 통합플랫폼 배워봄",
+    "source_url": "https://bwb.chuncheon.go.kr/enrollment/detail-view/?lifelongGisuLectureId=11599",
+    "details": {
+      "applicant_count": 26,
+      "capacity": 25,
+      "schedule": "월, 수 / 09:30 ~ 11:30",
+      "instructor": "방철원",
+      "application_method": "추첨식"
+    },
+    "raw_fields": {
+      "교육기관": "춘천시 평생학습관",
+      "교육기간": "2026-08-19 ~ 2026-12-07",
+      "교육시간": "월, 수 / 09:30 ~ 11:30",
+      "접수기간": "2026-07-20 ~ 2026-07-31",
+      "모집인원": "26 / 25",
+      "대상자": "성인",
+      "강사": "방철원",
+      "목록 카드 텍스트": "추첨식 접수중 오프라인 관심강좌 AI 미디어 콘텐츠 활용 키워드 펼치기 교육기관 춘천시 평생학습관 교육기간 2026-08-19 ~ 2026-12-07 교육시간 월, 수 / 09:30 ~ 11:30 접수기간 2026-07-20 ~ 2026-07-31 모집인원 26 / 25 대상자 성인 강사 방철원 수강신청",
+      "목록 URL": "https://bwb.chuncheon.go.kr/enrollment/category/?city%5B%5D=32010&status%5B%5D=receive"
+    },
+    "collected_at": "2026-07-25T12:41:49+09:00"
+  },
+  {
+    "id": "BAEWOBOHM:11596",
+    "title": "생활 속 다양한 AI·디지털활용",
+    "summary": "생활 속 다양한 AI·디지털활용: AI, 디지털 관련 성인 대상 오프라인 교육 프로그램",
+    "category": "EDUCATION",
+    "organization": {
+      "name": "춘천시 평생학습관",
+      "department": null
+    },
+    "dates": {
+      "published_at": null,
+      "recruit_start_at": "2026-07-20T00:00:00+09:00",
+      "recruit_end_at": "2026-07-31T23:59:59+09:00",
+      "activity_start_at": "2026-08-21T00:00:00+09:00",
+      "activity_end_at": "2026-12-04T23:59:59+09:00"
+    },
+    "targets": [
+      "성인"
+    ],
+    "topics": [
+      "AI",
+      "디지털"
+    ],
+    "location": {
+      "region": "춘천시",
+      "address": null,
+      "operation_type": "OFFLINE"
+    },
+    "status": "OPEN",
+    "thumbnail_url": null,
+    "source_logo_url": "https://bwb.chuncheon.go.kr/_user/img/layout/logo.svg",
+    "source": "춘천시 평생학습 통합플랫폼 배워봄",
+    "source_url": "https://bwb.chuncheon.go.kr/enrollment/detail-view/?lifelongGisuLectureId=11596",
+    "details": {
+      "applicant_count": 47,
+      "capacity": 25,
+      "schedule": "금 / 09:30 ~ 11:30",
+      "instructor": "경금자",
+      "application_method": "추첨식"
+    },
+    "raw_fields": {
+      "교육기관": "춘천시 평생학습관",
+      "교육기간": "2026-08-21 ~ 2026-12-04",
+      "교육시간": "금 / 09:30 ~ 11:30",
+      "접수기간": "2026-07-20 ~ 2026-07-31",
+      "모집인원": "47 / 25",
+      "대상자": "성인",
+      "강사": "경금자",
+      "목록 카드 텍스트": "추첨식 접수중 오프라인 관심강좌 생활 속 다양한 AI·디지털활용 키워드 펼치기 교육기관 춘천시 평생학습관 교육기간 2026-08-21 ~ 2026-12-04 교육시간 금 / 09:30 ~ 11:30 접수기간 2026-07-20 ~ 2026-07-31 모집인원 47 / 25 대상자 성인 강사 경금자 수강신청",
+      "목록 URL": "https://bwb.chuncheon.go.kr/enrollment/category/?city%5B%5D=32010&status%5B%5D=receive"
+    },
+    "collected_at": "2026-07-25T12:41:49+09:00"
+  },
+  {
+    "id": "BAEWOBOHM:11594",
+    "title": "컴퓨터기초 및 스마트폰활용",
+    "summary": "컴퓨터기초 및 스마트폰활용: 스마트폰, 컴퓨터 관련 성인 대상 오프라인 교육 프로그램",
+    "category": "EDUCATION",
+    "organization": {
+      "name": "춘천시 평생학습관",
+      "department": null
+    },
+    "dates": {
+      "published_at": null,
+      "recruit_start_at": "2026-07-20T00:00:00+09:00",
+      "recruit_end_at": "2026-07-31T23:59:59+09:00",
+      "activity_start_at": "2026-08-19T00:00:00+09:00",
+      "activity_end_at": "2026-12-07T23:59:59+09:00"
+    },
+    "targets": [
+      "성인"
+    ],
+    "topics": [
+      "스마트폰",
+      "컴퓨터"
+    ],
+    "location": {
+      "region": "춘천시",
+      "address": null,
+      "operation_type": "OFFLINE"
+    },
+    "status": "OPEN",
+    "thumbnail_url": null,
+    "source_logo_url": "https://bwb.chuncheon.go.kr/_user/img/layout/logo.svg",
+    "source": "춘천시 평생학습 통합플랫폼 배워봄",
+    "source_url": "https://bwb.chuncheon.go.kr/enrollment/detail-view/?lifelongGisuLectureId=11594",
+    "details": {
+      "applicant_count": 25,
+      "capacity": 25,
+      "schedule": "월, 수 / 14:00 ~ 16:00",
+      "instructor": "김명수",
+      "application_method": "추첨식"
+    },
+    "raw_fields": {
+      "교육기관": "춘천시 평생학습관",
+      "교육기간": "2026-08-19 ~ 2026-12-07",
+      "교육시간": "월, 수 / 14:00 ~ 16:00",
+      "접수기간": "2026-07-20 ~ 2026-07-31",
+      "모집인원": "25 / 25",
+      "대상자": "성인",
+      "강사": "김명수",
+      "목록 카드 텍스트": "추첨식 접수중 오프라인 관심강좌 컴퓨터기초 및 스마트폰활용 스마트폰 컴퓨터 키워드 펼치기 교육기관 춘천시 평생학습관 교육기간 2026-08-19 ~ 2026-12-07 교육시간 월, 수 / 14:00 ~ 16:00 접수기간 2026-07-20 ~ 2026-07-31 모집인원 25 / 25 대상자 성인 강사 김명수 수강신청",
+      "목록 URL": "https://bwb.chuncheon.go.kr/enrollment/category/?city%5B%5D=32010&status%5B%5D=receive"
+    },
+    "collected_at": "2026-07-25T12:41:49+09:00"
+  },
+  {
+    "id": "BAEWOBOHM:11593",
+    "title": "스마트폰100%활용",
+    "summary": "스마트폰100%활용: 스마트폰 관련 성인 대상 오프라인 교육 프로그램",
+    "category": "EDUCATION",
+    "organization": {
+      "name": "춘천시 평생학습관",
+      "department": null
+    },
+    "dates": {
+      "published_at": null,
+      "recruit_start_at": "2026-07-20T00:00:00+09:00",
+      "recruit_end_at": "2026-07-31T23:59:59+09:00",
+      "activity_start_at": "2026-08-21T00:00:00+09:00",
+      "activity_end_at": "2026-12-04T23:59:59+09:00"
+    },
+    "targets": [
+      "성인"
+    ],
+    "topics": [
+      "스마트폰"
+    ],
+    "location": {
+      "region": "춘천시",
+      "address": null,
+      "operation_type": "OFFLINE"
+    },
+    "status": "OPEN",
+    "thumbnail_url": null,
+    "source_logo_url": "https://bwb.chuncheon.go.kr/_user/img/layout/logo.svg",
+    "source": "춘천시 평생학습 통합플랫폼 배워봄",
+    "source_url": "https://bwb.chuncheon.go.kr/enrollment/detail-view/?lifelongGisuLectureId=11593",
+    "details": {
+      "applicant_count": 32,
+      "capacity": 25,
+      "schedule": "금 / 14:00 ~ 16:00",
+      "instructor": "박진희",
+      "application_method": "추첨식"
+    },
+    "raw_fields": {
+      "교육기관": "춘천시 평생학습관",
+      "교육기간": "2026-08-21 ~ 2026-12-04",
+      "교육시간": "금 / 14:00 ~ 16:00",
+      "접수기간": "2026-07-20 ~ 2026-07-31",
+      "모집인원": "32 / 25",
+      "대상자": "성인",
+      "강사": "박진희",
+      "목록 카드 텍스트": "추첨식 접수중 오프라인 관심강좌 스마트폰100%활용 키워드 펼치기 교육기관 춘천시 평생학습관 교육기간 2026-08-21 ~ 2026-12-04 교육시간 금 / 14:00 ~ 16:00 접수기간 2026-07-20 ~ 2026-07-31 모집인원 32 / 25 대상자 성인 강사 박진희 수강신청",
+      "목록 URL": "https://bwb.chuncheon.go.kr/enrollment/category/?city%5B%5D=32010&status%5B%5D=receive"
+    },
+    "collected_at": "2026-07-25T12:41:49+09:00"
+  },
+  {
+    "id": "BAEWOBOHM:11590",
+    "title": "영상 제작 첫걸음",
+    "summary": "영상 제작 첫걸음: 영상, 콘텐츠 제작 관련 성인 대상 오프라인 교육 프로그램",
+    "category": "EDUCATION",
+    "organization": {
+      "name": "춘천시 평생학습관",
+      "department": null
+    },
+    "dates": {
+      "published_at": null,
+      "recruit_start_at": "2026-07-20T00:00:00+09:00",
+      "recruit_end_at": "2026-07-31T23:59:59+09:00",
+      "activity_start_at": "2026-08-18T00:00:00+09:00",
+      "activity_end_at": "2026-12-03T23:59:59+09:00"
+    },
+    "targets": [
+      "성인"
+    ],
+    "topics": [
+      "영상",
+      "콘텐츠 제작"
+    ],
+    "location": {
+      "region": "춘천시",
+      "address": null,
+      "operation_type": "OFFLINE"
+    },
+    "status": "OPEN",
+    "thumbnail_url": null,
+    "source_logo_url": "https://bwb.chuncheon.go.kr/_user/img/layout/logo.svg",
+    "source": "춘천시 평생학습 통합플랫폼 배워봄",
+    "source_url": "https://bwb.chuncheon.go.kr/enrollment/detail-view/?lifelongGisuLectureId=11590",
+    "details": {
+      "applicant_count": 30,
+      "capacity": 25,
+      "schedule": "화, 목 / 14:00 ~ 16:00",
+      "instructor": "이하나",
+      "application_method": "추첨식"
+    },
+    "raw_fields": {
+      "교육기관": "춘천시 평생학습관",
+      "교육기간": "2026-08-18 ~ 2026-12-03",
+      "교육시간": "화, 목 / 14:00 ~ 16:00",
+      "접수기간": "2026-07-20 ~ 2026-07-31",
+      "모집인원": "30 / 25",
+      "대상자": "성인",
+      "강사": "이하나",
+      "목록 카드 텍스트": "추첨식 접수중 오프라인 관심강좌 영상 제작 첫걸음 키워드 펼치기 교육기관 춘천시 평생학습관 교육기간 2026-08-18 ~ 2026-12-03 교육시간 화, 목 / 14:00 ~ 16:00 접수기간 2026-07-20 ~ 2026-07-31 모집인원 30 / 25 대상자 성인 강사 이하나 수강신청",
+      "목록 URL": "https://bwb.chuncheon.go.kr/enrollment/category/?city%5B%5D=32010&status%5B%5D=receive"
+    },
+    "collected_at": "2026-07-25T12:41:49+09:00"
+  },
+  {
+    "id": "BAEWOBOHM:11587",
+    "title": "여행영어",
+    "summary": "여행영어: 여행, 영어, 회화 관련 성인 대상 오프라인 교육 프로그램",
+    "category": "EDUCATION",
+    "organization": {
+      "name": "춘천시 평생학습관",
+      "department": null
+    },
+    "dates": {
+      "published_at": null,
+      "recruit_start_at": "2026-07-20T00:00:00+09:00",
+      "recruit_end_at": "2026-07-31T23:59:59+09:00",
+      "activity_start_at": "2026-08-19T00:00:00+09:00",
+      "activity_end_at": "2026-12-04T23:59:59+09:00"
+    },
+    "targets": [
+      "성인"
+    ],
+    "topics": [
+      "여행",
+      "영어",
+      "회화"
+    ],
+    "location": {
+      "region": "춘천시",
+      "address": null,
+      "operation_type": "OFFLINE"
+    },
+    "status": "OPEN",
+    "thumbnail_url": null,
+    "source_logo_url": "https://bwb.chuncheon.go.kr/_user/img/layout/logo.svg",
+    "source": "춘천시 평생학습 통합플랫폼 배워봄",
+    "source_url": "https://bwb.chuncheon.go.kr/enrollment/detail-view/?lifelongGisuLectureId=11587",
+    "details": {
+      "applicant_count": 40,
+      "capacity": 30,
+      "schedule": "수, 금 / 09:30 ~ 11:30",
+      "instructor": "김미향",
+      "application_method": "추첨식"
+    },
+    "raw_fields": {
+      "교육기관": "춘천시 평생학습관",
+      "교육기간": "2026-08-19 ~ 2026-12-04",
+      "교육시간": "수, 금 / 09:30 ~ 11:30",
+      "접수기간": "2026-07-20 ~ 2026-07-31",
+      "모집인원": "40 / 30",
+      "대상자": "성인",
+      "강사": "김미향",
+      "목록 카드 텍스트": "추첨식 접수중 오프라인 관심강좌 여행영어 여행 영어 회화 키워드 펼치기 교육기관 춘천시 평생학습관 교육기간 2026-08-19 ~ 2026-12-04 교육시간 수, 금 / 09:30 ~ 11:30 접수기간 2026-07-20 ~ 2026-07-31 모집인원 40 / 30 대상자 성인 강사 김미향 수강신청",
+      "목록 URL": "https://bwb.chuncheon.go.kr/enrollment/category/?city%5B%5D=32010&status%5B%5D=receive"
+    },
+    "collected_at": "2026-07-25T12:41:49+09:00"
+  },
+  {
+    "id": "BAEWOBOHM:11584",
+    "title": "기초 중국어&회화",
+    "summary": "기초 중국어&회화: 중국어, 회화 관련 성인 대상 오프라인 교육 프로그램",
+    "category": "EDUCATION",
+    "organization": {
+      "name": "춘천시 평생학습관",
+      "department": null
+    },
+    "dates": {
+      "published_at": null,
+      "recruit_start_at": "2026-07-20T00:00:00+09:00",
+      "recruit_end_at": "2026-07-31T23:59:59+09:00",
+      "activity_start_at": "2026-08-20T00:00:00+09:00",
+      "activity_end_at": "2026-12-07T23:59:59+09:00"
+    },
+    "targets": [
+      "성인"
+    ],
+    "topics": [
+      "중국어",
+      "회화"
+    ],
+    "location": {
+      "region": "춘천시",
+      "address": null,
+      "operation_type": "OFFLINE"
+    },
+    "status": "OPEN",
+    "thumbnail_url": null,
+    "source_logo_url": "https://bwb.chuncheon.go.kr/_user/img/layout/logo.svg",
+    "source": "춘천시 평생학습 통합플랫폼 배워봄",
+    "source_url": "https://bwb.chuncheon.go.kr/enrollment/detail-view/?lifelongGisuLectureId=11584",
+    "details": {
+      "applicant_count": 19,
+      "capacity": 20,
+      "schedule": "월, 목 / 09:30 ~ 11:30",
+      "instructor": "이지연",
+      "application_method": "추첨식"
+    },
+    "raw_fields": {
+      "교육기관": "춘천시 평생학습관",
+      "교육기간": "2026-08-20 ~ 2026-12-07",
+      "교육시간": "월, 목 / 09:30 ~ 11:30",
+      "접수기간": "2026-07-20 ~ 2026-07-31",
+      "모집인원": "19 / 20",
+      "대상자": "성인",
+      "강사": "이지연",
+      "목록 카드 텍스트": "추첨식 접수중 오프라인 관심강좌 기초 중국어&회화 키워드 펼치기 교육기관 춘천시 평생학습관 교육기간 2026-08-20 ~ 2026-12-07 교육시간 월, 목 / 09:30 ~ 11:30 접수기간 2026-07-20 ~ 2026-07-31 모집인원 19 / 20 대상자 성인 강사 이지연 수강신청",
+      "목록 URL": "https://bwb.chuncheon.go.kr/enrollment/category/?city%5B%5D=32010&status%5B%5D=receive"
+    },
+    "collected_at": "2026-07-25T12:41:49+09:00"
+  }
+]
