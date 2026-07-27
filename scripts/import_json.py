@@ -38,6 +38,9 @@ JSON_FILES = [
     "subsidy24_chuncheon.json",
     "hallym_univ_opportunities.json",
     "kangwon_univ_opportunities.json",
+
+    "linkareer_opportunities.json",
+    "wevity_opportunities.json",
 ]
 
 

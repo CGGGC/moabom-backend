@@ -8,6 +8,14 @@ from sqlalchemy.orm import Session
 
 from app.database import engine, get_db
 
+from app.routers.auth import router as auth_router
+
+from app.routers.user_events import router as user_events_router
+from app.routers.recommendations import (
+    router as recommendations_router,
+)
+
+
 
 app = FastAPI(
     title="모아봄 API",
@@ -31,6 +39,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(auth_router)
+app.include_router(user_events_router)
+app.include_router(recommendations_router)
 
 
 @app.get("/")
