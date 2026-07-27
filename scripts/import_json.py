@@ -33,6 +33,11 @@ JSON_FILES = [
     "baewobom_courses.json",
     "chuncheon_economy_jobs.json",
     "chuncheon_events.json",
+
+    "g2b_chuncheon_bids.json",
+    "subsidy24_chuncheon.json",
+    "hallym_univ_opportunities.json",
+    "kangwon_univ_opportunities.json",
 ]
 
 
