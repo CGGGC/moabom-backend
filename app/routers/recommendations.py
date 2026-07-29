@@ -20,7 +20,7 @@ router = APIRouter(
 def get_recommendations(
     user_id: UUID,
     page: int = Query(default=1, ge=1),
-    size: int = Query(default=16, ge=1, le=100),
+    size: int = Query(default=16, ge=1, le=200),
     db: Session = Depends(get_db),
 ):
     """

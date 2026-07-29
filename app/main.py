@@ -82,7 +82,7 @@ def database_health_check():
 @app.get("/api/opportunities")
 def get_opportunities(
     page: int = Query(default=1, ge=1),
-    size: int = Query(default=20, ge=1, le=100),
+    size: int = Query(default=20, ge=1, le=200),
     category: str | None = Query(default=None),
     status: str | None = Query(default=None),
     keyword: str | None = Query(default=None),
