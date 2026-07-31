@@ -155,10 +155,6 @@ def get_recommendations(
                         'UPCOMING',
                         'UNKNOWN'
                     )
-                    AND (
-                        o.recruit_end_at IS NULL
-                        OR o.recruit_end_at >= CURRENT_DATE
-                    )
 
                     AND (
                         CAST(:category AS TEXT) IS NULL
@@ -217,9 +213,9 @@ def get_recommendations(
                     'UNKNOWN'
                 )
                 AND (
-                    recruit_end_at IS NULL
-                    OR recruit_end_at >= CURRENT_DATE
-                )
+    recruit_end_at IS NULL
+    OR recruit_end_at >= CURRENT_DATE
+)
 
                 AND (
                     CAST(:category AS TEXT) IS NULL
