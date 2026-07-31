@@ -15,6 +15,16 @@ from app.routers.recommendations import (
     router as recommendations_router,
 )
 
+from app.routers.career_jobs import (
+    router as career_jobs_router,
+)
+from app.routers.job_postings import (
+    router as job_postings_router,
+)
+from app.routers.housing import (
+    router as housing_router,
+)
+
 
 
 app = FastAPI(
@@ -43,6 +53,10 @@ app.add_middleware(
 app.include_router(auth_router)
 app.include_router(user_events_router)
 app.include_router(recommendations_router)
+
+app.include_router(career_jobs_router)
+app.include_router(job_postings_router)
+app.include_router(housing_router)
 
 
 @app.get("/")
@@ -152,6 +166,9 @@ def get_opportunities(
                 title,
                 summary,
                 category,
+                category_name,
+                taxonomy_version,
+                subcategories,
                 status,
                 organization,
                 dates,
@@ -232,6 +249,9 @@ def get_opportunity_detail(
                 title,
                 summary,
                 category,
+                category_name,
+                taxonomy_version,
+                subcategories,
                 status,
                 organization,
                 dates,
