@@ -8,7 +8,6 @@ from sqlalchemy.orm import Session
 
 from app.database import get_db
 
-
 router = APIRouter(
     prefix="/api/recommendations",
     tags=["Recommendations"],
@@ -25,7 +24,7 @@ def get_recommendations(
     size: int = Query(
         default=16,
         ge=1,
-        le=200,
+        le=800,
     ),
     category: str | None = Query(
         default=None,
@@ -43,16 +42,12 @@ def get_recommendations(
 
     offset = (page - 1) * size
 
-    normalized_category = (
-        category.strip().upper()
-        if category
-        else None
-    )
+    normalized_category = category.strip().upper() if category else None
 
     try:
-        items = db.execute(
-            text(
-                """
+        items = (
+            db.execute(
+                text("""
                 WITH scored_opportunities AS (
                     SELECT
                         o.*,
@@ -160,6 +155,10 @@ def get_recommendations(
                         'UPCOMING',
                         'UNKNOWN'
                     )
+                    AND (
+                        o.recruit_end_at IS NULL
+                        OR o.recruit_end_at >= CURRENT_DATE
+                    )
 
                     AND (
                         CAST(:category AS TEXT) IS NULL
@@ -194,19 +193,20 @@ def get_recommendations(
 
                 LIMIT :size
                 OFFSET :offset
-                """
-            ),
-            {
-                "user_id": str(user_id),
-                "category": normalized_category,
-                "size": size,
-                "offset": offset,
-            },
-        ).mappings().all()
+                """),
+                {
+                    "user_id": str(user_id),
+                    "category": normalized_category,
+                    "size": size,
+                    "offset": offset,
+                },
+            )
+            .mappings()
+            .all()
+        )
 
         total = db.execute(
-            text(
-                """
+            text("""
                 SELECT COUNT(*)
                 FROM public.opportunities
 
@@ -216,13 +216,16 @@ def get_recommendations(
                     'UPCOMING',
                     'UNKNOWN'
                 )
+                AND (
+                    recruit_end_at IS NULL
+                    OR recruit_end_at >= CURRENT_DATE
+                )
 
                 AND (
                     CAST(:category AS TEXT) IS NULL
                     OR category = :category
                 )
-                """
-            ),
+                """),
             {
                 "category": normalized_category,
             },
@@ -234,32 +237,19 @@ def get_recommendations(
         raise
 
     return {
-        "items": [
-            dict(item)
-            for item in items
-        ],
+        "items": [dict(item) for item in items],
         "pagination": {
             "page": page,
             "size": size,
             "total": total,
-            "total_pages": (
-                ceil(total / size)
-                if total > 0
-                else 0
-            ),
+            "total_pages": (ceil(total / size) if total > 0 else 0),
         },
         "filters": {
             "category": normalized_category,
         },
         "scoring": {
-            "formula": (
-                "preference_score + region_score"
-            ),
-            "contest_hackathon_priority": (
-                "NATIONWIDE_ONLINE"
-            ),
-            "other_category_priority": (
-                "CHUNCHEON"
-            ),
+            "formula": ("preference_score + region_score"),
+            "contest_hackathon_priority": ("NATIONWIDE_ONLINE"),
+            "other_category_priority": ("CHUNCHEON"),
         },
     }
