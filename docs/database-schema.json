@@ -1,0 +1,1283 @@
+{
+  "columns": [
+    {
+      "table_name": "career_jobs",
+      "column_name": "id",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "schema_version",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": "'2.0'::text"
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "job_name",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "source_job_name",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "summary",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "related_jobs",
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'[]'::jsonb"
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "core_abilities",
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'[]'::jsonb"
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "aptitude",
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'[]'::jsonb"
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "interests",
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'[]'::jsonb"
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "related_majors",
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'[]'::jsonb"
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "related_certifications",
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'[]'::jsonb"
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "career_net_seq",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "standard_job_code",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "employment_job_code",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "source_code",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "source_name",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "source_url",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "external_id",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "collected_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "verification_status",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "raw_data",
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'{}'::jsonb"
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "career_jobs",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "id",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "schema_version",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": "'2.0'::text"
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "province",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "city",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "district",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "legal_dong",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "full_address",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "jibun",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "road_address",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "housing_type",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "building_name",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "exclusive_area_m2",
+      "data_type": "numeric",
+      "udt_name": "numeric",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "floor",
+      "data_type": "integer",
+      "udt_name": "int4",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "built_year",
+      "data_type": "integer",
+      "udt_name": "int4",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "contract_date",
+      "data_type": "date",
+      "udt_name": "date",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "transaction_type",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "deposit",
+      "data_type": "bigint",
+      "udt_name": "int8",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "monthly_rent",
+      "data_type": "bigint",
+      "udt_name": "int8",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "renewal_type",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "contract_term",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "previous_deposit",
+      "data_type": "bigint",
+      "udt_name": "int8",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "previous_monthly_rent",
+      "data_type": "bigint",
+      "udt_name": "int8",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "source_code",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "source_name",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "source_url",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "external_id",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "collected_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "verification_status",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "raw_data",
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'{}'::jsonb"
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "housing_transactions",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "id",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "schema_version",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": "'2.0'::text"
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "title",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "organization_name",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "job_name",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "job_code",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "recruitment_count",
+      "data_type": "integer",
+      "udt_name": "int4",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "employment_type",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "employment_type_raw",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "salary_type",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "salary_min",
+      "data_type": "bigint",
+      "udt_name": "int8",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "salary_max",
+      "data_type": "bigint",
+      "udt_name": "int8",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "salary_display",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "education",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "career",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "industry",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "address",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "registration_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "recruit_end_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "source_code",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "source_name",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "source_url",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "external_id",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "collected_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "verification_status",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "raw_data",
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'{}'::jsonb"
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "job_postings",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "id",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "title",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "summary",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "category",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "status",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "organization",
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'{}'::jsonb"
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "dates",
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'{}'::jsonb"
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "targets",
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'[]'::jsonb"
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "topics",
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'[]'::jsonb"
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "location",
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'{}'::jsonb"
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "thumbnail_url",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "source_logo_url",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "source",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "source_url",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "details",
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'{}'::jsonb"
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "raw_fields",
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'{}'::jsonb"
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "published_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "recruit_start_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "recruit_end_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "activity_start_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "activity_end_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "collected_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "category_name",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "taxonomy_version",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "opportunities",
+      "column_name": "subcategories",
+      "data_type": "jsonb",
+      "udt_name": "jsonb",
+      "is_nullable": "NO",
+      "column_default": "'[]'::jsonb"
+    },
+    {
+      "table_name": "user_activity_events",
+      "column_name": "id",
+      "data_type": "bigint",
+      "udt_name": "int8",
+      "is_nullable": "NO",
+      "column_default": "nextval('user_activity_events_id_seq'::regclass)"
+    },
+    {
+      "table_name": "user_activity_events",
+      "column_name": "user_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "user_activity_events",
+      "column_name": "opportunity_id",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "user_activity_events",
+      "column_name": "event_type",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "user_activity_events",
+      "column_name": "category",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "user_activity_events",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "user_category_preferences",
+      "column_name": "user_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "user_category_preferences",
+      "column_name": "category",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "user_category_preferences",
+      "column_name": "score",
+      "data_type": "numeric",
+      "udt_name": "numeric",
+      "is_nullable": "NO",
+      "column_default": "0"
+    },
+    {
+      "table_name": "user_category_preferences",
+      "column_name": "view_count",
+      "data_type": "integer",
+      "udt_name": "int4",
+      "is_nullable": "NO",
+      "column_default": "0"
+    },
+    {
+      "table_name": "user_category_preferences",
+      "column_name": "click_count",
+      "data_type": "integer",
+      "udt_name": "int4",
+      "is_nullable": "NO",
+      "column_default": "0"
+    },
+    {
+      "table_name": "user_category_preferences",
+      "column_name": "bookmark_count",
+      "data_type": "integer",
+      "udt_name": "int4",
+      "is_nullable": "NO",
+      "column_default": "0"
+    },
+    {
+      "table_name": "user_category_preferences",
+      "column_name": "apply_count",
+      "data_type": "integer",
+      "udt_name": "int4",
+      "is_nullable": "NO",
+      "column_default": "0"
+    },
+    {
+      "table_name": "user_category_preferences",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "users",
+      "column_name": "id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO",
+      "column_default": "gen_random_uuid()"
+    },
+    {
+      "table_name": "users",
+      "column_name": "email",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "users",
+      "column_name": "password_hash",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "users",
+      "column_name": "nickname",
+      "data_type": "text",
+      "udt_name": "text",
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "users",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "users",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone",
+      "udt_name": "timestamptz",
+      "is_nullable": "NO",
+      "column_default": "now()"
+    }
+  ],
+  "constraints": [
+    {
+      "table_name": "career_jobs",
+      "name": "career_jobs_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "housing_transactions",
+      "name": "housing_transactions_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "job_postings",
+      "name": "job_postings_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "opportunities",
+      "name": "opportunities_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "user_activity_events",
+      "name": "user_activity_events_event_type_check",
+      "type": "c",
+      "definition": "CHECK ((event_type = ANY (ARRAY['IMPRESSION'::text, 'VIEW'::text, 'CLICK'::text, 'BOOKMARK'::text, 'APPLY'::text])))"
+    },
+    {
+      "table_name": "user_activity_events",
+      "name": "user_activity_events_opportunity_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (opportunity_id) REFERENCES opportunities(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "user_activity_events",
+      "name": "user_activity_events_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "user_category_preferences",
+      "name": "user_category_preferences_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (user_id, category)"
+    },
+    {
+      "table_name": "users",
+      "name": "users_email_key",
+      "type": "u",
+      "definition": "UNIQUE (email)"
+    },
+    {
+      "table_name": "users",
+      "name": "users_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)"
+    }
+  ],
+  "indexes": [
+    {
+      "tablename": "career_jobs",
+      "indexname": "career_jobs_pkey",
+      "indexdef": "CREATE UNIQUE INDEX career_jobs_pkey ON public.career_jobs USING btree (id)"
+    },
+    {
+      "tablename": "career_jobs",
+      "indexname": "idx_career_jobs_core_abilities_gin",
+      "indexdef": "CREATE INDEX idx_career_jobs_core_abilities_gin ON public.career_jobs USING gin (core_abilities)"
+    },
+    {
+      "tablename": "career_jobs",
+      "indexname": "idx_career_jobs_employment_job_code",
+      "indexdef": "CREATE INDEX idx_career_jobs_employment_job_code ON public.career_jobs USING btree (employment_job_code)"
+    },
+    {
+      "tablename": "career_jobs",
+      "indexname": "idx_career_jobs_job_name",
+      "indexdef": "CREATE INDEX idx_career_jobs_job_name ON public.career_jobs USING btree (job_name)"
+    },
+    {
+      "tablename": "career_jobs",
+      "indexname": "idx_career_jobs_related_majors_gin",
+      "indexdef": "CREATE INDEX idx_career_jobs_related_majors_gin ON public.career_jobs USING gin (related_majors)"
+    },
+    {
+      "tablename": "career_jobs",
+      "indexname": "idx_career_jobs_standard_job_code",
+      "indexdef": "CREATE INDEX idx_career_jobs_standard_job_code ON public.career_jobs USING btree (standard_job_code)"
+    },
+    {
+      "tablename": "housing_transactions",
+      "indexname": "housing_transactions_pkey",
+      "indexdef": "CREATE UNIQUE INDEX housing_transactions_pkey ON public.housing_transactions USING btree (id)"
+    },
+    {
+      "tablename": "housing_transactions",
+      "indexname": "idx_housing_transactions_city",
+      "indexdef": "CREATE INDEX idx_housing_transactions_city ON public.housing_transactions USING btree (city)"
+    },
+    {
+      "tablename": "housing_transactions",
+      "indexname": "idx_housing_transactions_city_type_date",
+      "indexdef": "CREATE INDEX idx_housing_transactions_city_type_date ON public.housing_transactions USING btree (city, housing_type, contract_date)"
+    },
+    {
+      "tablename": "housing_transactions",
+      "indexname": "idx_housing_transactions_contract_date",
+      "indexdef": "CREATE INDEX idx_housing_transactions_contract_date ON public.housing_transactions USING btree (contract_date)"
+    },
+    {
+      "tablename": "housing_transactions",
+      "indexname": "idx_housing_transactions_housing_type",
+      "indexdef": "CREATE INDEX idx_housing_transactions_housing_type ON public.housing_transactions USING btree (housing_type)"
+    },
+    {
+      "tablename": "housing_transactions",
+      "indexname": "idx_housing_transactions_legal_dong",
+      "indexdef": "CREATE INDEX idx_housing_transactions_legal_dong ON public.housing_transactions USING btree (legal_dong)"
+    },
+    {
+      "tablename": "housing_transactions",
+      "indexname": "idx_housing_transactions_transaction_type",
+      "indexdef": "CREATE INDEX idx_housing_transactions_transaction_type ON public.housing_transactions USING btree (transaction_type)"
+    },
+    {
+      "tablename": "job_postings",
+      "indexname": "idx_job_postings_job_code",
+      "indexdef": "CREATE INDEX idx_job_postings_job_code ON public.job_postings USING btree (job_code)"
+    },
+    {
+      "tablename": "job_postings",
+      "indexname": "idx_job_postings_job_name",
+      "indexdef": "CREATE INDEX idx_job_postings_job_name ON public.job_postings USING btree (job_name)"
+    },
+    {
+      "tablename": "job_postings",
+      "indexname": "idx_job_postings_organization_name",
+      "indexdef": "CREATE INDEX idx_job_postings_organization_name ON public.job_postings USING btree (organization_name)"
+    },
+    {
+      "tablename": "job_postings",
+      "indexname": "idx_job_postings_recruit_end_at",
+      "indexdef": "CREATE INDEX idx_job_postings_recruit_end_at ON public.job_postings USING btree (recruit_end_at)"
+    },
+    {
+      "tablename": "job_postings",
+      "indexname": "job_postings_pkey",
+      "indexdef": "CREATE UNIQUE INDEX job_postings_pkey ON public.job_postings USING btree (id)"
+    },
+    {
+      "tablename": "opportunities",
+      "indexname": "idx_opportunities_category",
+      "indexdef": "CREATE INDEX idx_opportunities_category ON public.opportunities USING btree (category)"
+    },
+    {
+      "tablename": "opportunities",
+      "indexname": "idx_opportunities_category_status",
+      "indexdef": "CREATE INDEX idx_opportunities_category_status ON public.opportunities USING btree (category, status)"
+    },
+    {
+      "tablename": "opportunities",
+      "indexname": "idx_opportunities_subcategories_gin",
+      "indexdef": "CREATE INDEX idx_opportunities_subcategories_gin ON public.opportunities USING gin (subcategories)"
+    },
+    {
+      "tablename": "opportunities",
+      "indexname": "opportunities_pkey",
+      "indexdef": "CREATE UNIQUE INDEX opportunities_pkey ON public.opportunities USING btree (id)"
+    },
+    {
+      "tablename": "user_activity_events",
+      "indexname": "user_activity_events_pkey",
+      "indexdef": "CREATE UNIQUE INDEX user_activity_events_pkey ON public.user_activity_events USING btree (id)"
+    },
+    {
+      "tablename": "user_category_preferences",
+      "indexname": "user_category_preferences_pkey",
+      "indexdef": "CREATE UNIQUE INDEX user_category_preferences_pkey ON public.user_category_preferences USING btree (user_id, category)"
+    },
+    {
+      "tablename": "users",
+      "indexname": "idx_users_email",
+      "indexdef": "CREATE UNIQUE INDEX idx_users_email ON public.users USING btree (lower(email))"
+    },
+    {
+      "tablename": "users",
+      "indexname": "idx_users_email_lower",
+      "indexdef": "CREATE UNIQUE INDEX idx_users_email_lower ON public.users USING btree (lower(email))"
+    },
+    {
+      "tablename": "users",
+      "indexname": "users_email_key",
+      "indexdef": "CREATE UNIQUE INDEX users_email_key ON public.users USING btree (email)"
+    },
+    {
+      "tablename": "users",
+      "indexname": "users_pkey",
+      "indexdef": "CREATE UNIQUE INDEX users_pkey ON public.users USING btree (id)"
+    }
+  ],
+  "rls": [
+    {
+      "table_name": "career_jobs",
+      "enabled": false,
+      "forced": false
+    },
+    {
+      "table_name": "housing_transactions",
+      "enabled": false,
+      "forced": false
+    },
+    {
+      "table_name": "job_postings",
+      "enabled": false,
+      "forced": false
+    },
+    {
+      "table_name": "opportunities",
+      "enabled": false,
+      "forced": false
+    },
+    {
+      "table_name": "user_activity_events",
+      "enabled": false,
+      "forced": false
+    },
+    {
+      "table_name": "user_category_preferences",
+      "enabled": false,
+      "forced": false
+    },
+    {
+      "table_name": "users",
+      "enabled": false,
+      "forced": false
+    }
+  ],
+  "opportunities_count": 1386,
+  "career_jobs_count": 12,
+  "job_postings_count": 50,
+  "housing_transactions_count": 6830,
+  "captured_date_seoul": "2026-10-08",
+  "scope": "Read-only live schema inspection; columns/constraints/indexes/RLS and public dataset counts; no user records"
+}

@@ -1,0 +1,85 @@
+{
+  "opportunities": {
+    "total": 1386,
+    "detail_ok": true
+  },
+  "career_jobs": {
+    "total": 12,
+    "detail_ok": true
+  },
+  "job_postings": {
+    "total": 50,
+    "detail_ok": true
+  },
+  "housing_transactions": {
+    "total": 6830
+  },
+  "housing_region_counts": {
+    "서울특별시": 1200,
+    "춘천시": 5630
+  },
+  "recommendations": {
+    "candidate_total": 761,
+    "items_returned": 1
+  },
+  "housing_ids_match_local_chuncheon_plus_seoul_samples": true,
+  "housing_breakdown": [
+    {
+      "province": "강원특별자치도",
+      "housing_type": "APARTMENT",
+      "rows": 1981,
+      "first_contract": "2026-01-01",
+      "last_contract": "2026-07-30"
+    },
+    {
+      "province": "강원특별자치도",
+      "housing_type": "DETACHED_MULTI",
+      "rows": 3189,
+      "first_contract": "2026-01-01",
+      "last_contract": "2026-07-30"
+    },
+    {
+      "province": "강원특별자치도",
+      "housing_type": "OFFICETEL",
+      "rows": 333,
+      "first_contract": "2026-01-01",
+      "last_contract": "2026-07-29"
+    },
+    {
+      "province": "강원특별자치도",
+      "housing_type": "ROW_HOUSE",
+      "rows": 127,
+      "first_contract": "2026-01-02",
+      "last_contract": "2026-07-27"
+    },
+    {
+      "province": "서울특별시",
+      "housing_type": "APARTMENT",
+      "rows": 300,
+      "first_contract": "2026-01-03",
+      "last_contract": "2026-07-27"
+    },
+    {
+      "province": "서울특별시",
+      "housing_type": "DETACHED_MULTI",
+      "rows": 300,
+      "first_contract": "2026-01-01",
+      "last_contract": "2026-07-30"
+    },
+    {
+      "province": "서울특별시",
+      "housing_type": "OFFICETEL",
+      "rows": 300,
+      "first_contract": "2026-01-02",
+      "last_contract": "2026-07-30"
+    },
+    {
+      "province": "서울특별시",
+      "housing_type": "ROW_HOUSE",
+      "rows": 300,
+      "first_contract": "2026-01-02",
+      "last_contract": "2026-07-29"
+    }
+  ],
+  "scope": "Read-only direct invocation of GET route functions against live DB; not an HTTP client test; POST routes not executed"
+}

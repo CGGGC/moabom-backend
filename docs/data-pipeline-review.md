@@ -34,7 +34,7 @@ flowchart LR
     PR -. 정제·DB 적재 코드 미확인 .-> NEXT[후속 통합]
 ```
 
-마지막 정책 원문 3건과 백엔드의 온통청년 정책 405건은 서로 다른 결과물입니다. 또한 직업·채용·주거 결과를 같은 `opportunities` 테이블에 적재하지 않고 도메인별 테이블에 적재합니다. 실제 어떤 파일이 서비스 DB에 적재되었는지는 DB 접속 복구 후 확인해야 합니다.
+마지막 정책 원문 3건과 백엔드의 온통청년 정책 405건은 서로 다른 결과물입니다. 또한 직업·채용·주거 결과를 같은 `opportunities` 테이블에 적재하지 않고 도메인별 테이블에 적재합니다. 2026-10-08 읽기 전용 실측에서 직업 12·채용 50·주거 6,830건을 확인했습니다. 주거 DB의 ID 집합은 춘천 정제 5,630건 + 서울 매칭 표본 1,200건과 일치했습니다. [DB 읽기 검증](live-read-validation.json)을 참고할 수 있습니다.
 
 ## 2. 직업 수집: 동적 페이지 → 원문 보존 → 검색용 정제
 
@@ -56,7 +56,7 @@ Playwright Chromium으로 페이지를 열어 DOM을 확보하고, BeautifulSoup
 
 정제 사례: ‘인공지능전문가’의 원문에서 컴퓨터공학과·전자공학과·응용소프트웨어공학과·수학과·통계학과를 `related_majors` 배열로, 수리·논리력·공간지각력을 `core_abilities` 배열로 추출했습니다. 데이터에는 직업 개요가 있으나 원본의 소득·전망·만족도 등 추가 탭 필드는 비어 있습니다.
 
-`import_career_jobs.py`가 직업 배열을 JSONB로 캐스팅하여 upsert하고, `/api/career-jobs`의 학과 검색은 `related_majors @> CAST(:major_json AS jsonb)`를 사용합니다. 즉 화면에서 선택할 수 있는 직업 탐색의 기초 데이터를 확보한 사례로 설명할 수 있습니다. 이 데이터만으로 AI 로드맵이 구현됐다고 표현할 근거는 없습니다.
+`import_career_jobs.py`가 직업 배열을 JSONB로 캐스팅하여 upsert하고, `/api/career-jobs`의 학과 검색은 `related_majors @> CAST(:major_json AS jsonb)`를 사용합니다. 즉 화면에서 선택할 수 있는 직업 탐색의 기초 데이터를 확보한 사례로 설명할 수 있습니다. AI 로드맵·합격 팁·개인 메모는 사용자 확인에 따라 프론트엔드 담당 기능이며 본인의 백엔드 기여 설명에서 제외합니다.
 
 ## 3. 민간 채용 정제: 문자열 → 비교·검색 가능한 필드
 
@@ -201,4 +201,4 @@ python3 scripts/audit_data.py --as-of 2026-10-08
 DATABASE_URL=postgresql+psycopg://offline:offline@localhost/offline .venv/bin/python -m unittest discover -s tests -v
 ```
 
-위 명령은 운영 DB에 연결·적재하지 않습니다. DB 연결을 복구하면 먼저 읽기 전용 schema 확인을 수행하고, 적재 대상·스키마·날짜 정책을 검토한 뒤 수집 파이프라인 운영을 정리하면 됩니다.
+위 명령은 운영 DB에 연결·적재하지 않습니다. 기존 DB 연결로 읽기 전용 schema와 저장 건수를 확인했습니다. [DB 설계](database-design.md)에 실제 구조를 기록했으며, 적재 대상·날짜 정책·표본 정책과 수집 파이프라인 운영은 후속으로 정리할 수 있습니다.

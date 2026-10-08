@@ -1,4 +1,4 @@
--- Read-only inspection after restoring a valid Supabase DATABASE_URL.
+-- Read-only inspection using a valid Supabase DATABASE_URL or SQL Editor.
 -- Does not retrieve user records or change the schema/data.
 BEGIN READ ONLY;
 SET LOCAL statement_timeout = '5s';

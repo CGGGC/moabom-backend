@@ -1,0 +1,363 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1592" height="1380" viewBox="0 0 1592 1380" role="img" aria-labelledby="title description">
+<title id="title">모아봄 직업·채용·주거 데이터 구조</title>
+<desc id="description">실제 Supabase 자료형과 제약. 실선은 DB 외래키, 점선은 DB 외래키가 없는 코드상의 식별 관계입니다.</desc>
+<defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#e6eaf0"/></pattern></defs>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif} .column{font-family:"SFMono-Regular",Menlo,Consolas,monospace;font-size:15px;fill:#283445} .type{font-family:"SFMono-Regular",Menlo,Consolas,monospace;font-size:13px;fill:#7b8794}</style>
+<rect width="1592" height="1380" fill="#fbfcfe"/>
+<rect y="110" width="1592" height="1160" fill="url(#dots)"/>
+<text x="72" y="50" font-size="26" font-weight="700" fill="#18283d">모아봄 직업·채용·주거 데이터 구조</text>
+<text x="72" y="82" font-size="14" fill="#68778b">Supabase 읽기 전용 실측 · 테이블 3개 · 2026-10-08</text>
+<rect x="56" y="139" width="450" height="782" rx="9" fill="#dfe5ee" opacity="0.4"/>
+<rect x="56" y="136" width="450" height="782" rx="9" fill="white" stroke="#d9e0e9"/>
+<rect x="72" y="153" width="13" height="13" rx="2" fill="none" stroke="#748498"/>
+<path d="M72 157 H85 M76 153 V166" stroke="#748498"/>
+<text x="96" y="166" font-size="17" font-weight="600" fill="#1d2b3d">career_jobs</text>
+<line x1="56" y1="182" x2="506" y2="182" stroke="#edf0f4"/>
+<path d="M105 194.0 L109 198.0 L105 202.0 L101 198.0 Z" fill="#596778" stroke="#596778"/>
+<text x="68" y="202.0" font-size="10" font-weight="700" fill="#245ea8">PK</text>
+<text class="column" x="121" y="203.0">id</text>
+<text class="type" x="490" y="202.0" text-anchor="end">text</text>
+<line x1="56" y1="214" x2="506" y2="214" stroke="#edf0f4"/>
+<path d="M105 226.0 L109 230.0 L105 234.0 L101 230.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="121" y="235.0">schema_version</text>
+<text class="type" x="490" y="234.0" text-anchor="end">text</text>
+<line x1="56" y1="246" x2="506" y2="246" stroke="#edf0f4"/>
+<path d="M105 258.0 L109 262.0 L105 266.0 L101 262.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="121" y="267.0">job_name</text>
+<text class="type" x="490" y="266.0" text-anchor="end">text</text>
+<line x1="56" y1="278" x2="506" y2="278" stroke="#edf0f4"/>
+<path d="M105 290.0 L109 294.0 L105 298.0 L101 294.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="121" y="299.0">source_job_name</text>
+<text class="type" x="490" y="298.0" text-anchor="end">text</text>
+<line x1="56" y1="310" x2="506" y2="310" stroke="#edf0f4"/>
+<path d="M105 322.0 L109 326.0 L105 330.0 L101 326.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="121" y="331.0">summary</text>
+<text class="type" x="490" y="330.0" text-anchor="end">text</text>
+<line x1="56" y1="342" x2="506" y2="342" stroke="#edf0f4"/>
+<path d="M105 354.0 L109 358.0 L105 362.0 L101 358.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="121" y="363.0">related_jobs</text>
+<text class="type" x="490" y="362.0" text-anchor="end">jsonb</text>
+<line x1="56" y1="374" x2="506" y2="374" stroke="#edf0f4"/>
+<path d="M105 386.0 L109 390.0 L105 394.0 L101 390.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="121" y="395.0">core_abilities</text>
+<text class="type" x="490" y="394.0" text-anchor="end">jsonb</text>
+<line x1="56" y1="406" x2="506" y2="406" stroke="#edf0f4"/>
+<path d="M105 418.0 L109 422.0 L105 426.0 L101 422.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="121" y="427.0">aptitude</text>
+<text class="type" x="490" y="426.0" text-anchor="end">jsonb</text>
+<line x1="56" y1="438" x2="506" y2="438" stroke="#edf0f4"/>
+<path d="M105 450.0 L109 454.0 L105 458.0 L101 454.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="121" y="459.0">interests</text>
+<text class="type" x="490" y="458.0" text-anchor="end">jsonb</text>
+<line x1="56" y1="470" x2="506" y2="470" stroke="#edf0f4"/>
+<path d="M105 482.0 L109 486.0 L105 490.0 L101 486.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="121" y="491.0">related_majors</text>
+<text class="type" x="490" y="490.0" text-anchor="end">jsonb</text>
+<line x1="56" y1="502" x2="506" y2="502" stroke="#edf0f4"/>
+<path d="M105 514.0 L109 518.0 L105 522.0 L101 518.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="121" y="523.0">related_certifications</text>
+<text class="type" x="490" y="522.0" text-anchor="end">jsonb</text>
+<line x1="56" y1="534" x2="506" y2="534" stroke="#edf0f4"/>
+<path d="M105 546.0 L109 550.0 L105 554.0 L101 550.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="121" y="555.0">career_net_seq</text>
+<text class="type" x="490" y="554.0" text-anchor="end">text</text>
+<line x1="56" y1="566" x2="506" y2="566" stroke="#edf0f4"/>
+<path d="M105 578.0 L109 582.0 L105 586.0 L101 582.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="121" y="587.0">standard_job_code</text>
+<text class="type" x="490" y="586.0" text-anchor="end">text</text>
+<line x1="56" y1="598" x2="506" y2="598" stroke="#edf0f4"/>
+<path d="M105 610.0 L109 614.0 L105 618.0 L101 614.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="121" y="619.0">employment_job_code</text>
+<text class="type" x="490" y="618.0" text-anchor="end">text</text>
+<line x1="56" y1="630" x2="506" y2="630" stroke="#edf0f4"/>
+<path d="M105 642.0 L109 646.0 L105 650.0 L101 646.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="121" y="651.0">source_code</text>
+<text class="type" x="490" y="650.0" text-anchor="end">text</text>
+<line x1="56" y1="662" x2="506" y2="662" stroke="#edf0f4"/>
+<path d="M105 674.0 L109 678.0 L105 682.0 L101 678.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="121" y="683.0">source_name</text>
+<text class="type" x="490" y="682.0" text-anchor="end">text</text>
+<line x1="56" y1="694" x2="506" y2="694" stroke="#edf0f4"/>
+<path d="M105 706.0 L109 710.0 L105 714.0 L101 710.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="121" y="715.0">source_url</text>
+<text class="type" x="490" y="714.0" text-anchor="end">text</text>
+<line x1="56" y1="726" x2="506" y2="726" stroke="#edf0f4"/>
+<path d="M105 738.0 L109 742.0 L105 746.0 L101 742.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="121" y="747.0">external_id</text>
+<text class="type" x="490" y="746.0" text-anchor="end">text</text>
+<line x1="56" y1="758" x2="506" y2="758" stroke="#edf0f4"/>
+<path d="M105 770.0 L109 774.0 L105 778.0 L101 774.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="121" y="779.0">collected_at</text>
+<text class="type" x="490" y="778.0" text-anchor="end">timestamptz</text>
+<line x1="56" y1="790" x2="506" y2="790" stroke="#edf0f4"/>
+<path d="M105 802.0 L109 806.0 L105 810.0 L101 806.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="121" y="811.0">verification_status</text>
+<text class="type" x="490" y="810.0" text-anchor="end">text</text>
+<line x1="56" y1="822" x2="506" y2="822" stroke="#edf0f4"/>
+<path d="M105 834.0 L109 838.0 L105 842.0 L101 838.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="121" y="843.0">raw_data</text>
+<text class="type" x="490" y="842.0" text-anchor="end">jsonb</text>
+<line x1="56" y1="854" x2="506" y2="854" stroke="#edf0f4"/>
+<path d="M105 866.0 L109 870.0 L105 874.0 L101 870.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="121" y="875.0">created_at</text>
+<text class="type" x="490" y="874.0" text-anchor="end">timestamptz</text>
+<line x1="56" y1="886" x2="506" y2="886" stroke="#edf0f4"/>
+<path d="M105 898.0 L109 902.0 L105 906.0 L101 902.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="121" y="907.0">updated_at</text>
+<text class="type" x="490" y="906.0" text-anchor="end">timestamptz</text>
+<rect x="572" y="139" width="450" height="942" rx="9" fill="#dfe5ee" opacity="0.4"/>
+<rect x="572" y="136" width="450" height="942" rx="9" fill="white" stroke="#d9e0e9"/>
+<rect x="588" y="153" width="13" height="13" rx="2" fill="none" stroke="#748498"/>
+<path d="M588 157 H601 M592 153 V166" stroke="#748498"/>
+<text x="612" y="166" font-size="17" font-weight="600" fill="#1d2b3d">job_postings</text>
+<line x1="572" y1="182" x2="1022" y2="182" stroke="#edf0f4"/>
+<path d="M621 194.0 L625 198.0 L621 202.0 L617 198.0 Z" fill="#596778" stroke="#596778"/>
+<text x="584" y="202.0" font-size="10" font-weight="700" fill="#245ea8">PK</text>
+<text class="column" x="637" y="203.0">id</text>
+<text class="type" x="1006" y="202.0" text-anchor="end">text</text>
+<line x1="572" y1="214" x2="1022" y2="214" stroke="#edf0f4"/>
+<path d="M621 226.0 L625 230.0 L621 234.0 L617 230.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="637" y="235.0">schema_version</text>
+<text class="type" x="1006" y="234.0" text-anchor="end">text</text>
+<line x1="572" y1="246" x2="1022" y2="246" stroke="#edf0f4"/>
+<path d="M621 258.0 L625 262.0 L621 266.0 L617 262.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="637" y="267.0">title</text>
+<text class="type" x="1006" y="266.0" text-anchor="end">text</text>
+<line x1="572" y1="278" x2="1022" y2="278" stroke="#edf0f4"/>
+<path d="M621 290.0 L625 294.0 L621 298.0 L617 294.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="299.0">organization_name</text>
+<text class="type" x="1006" y="298.0" text-anchor="end">text</text>
+<line x1="572" y1="310" x2="1022" y2="310" stroke="#edf0f4"/>
+<path d="M621 322.0 L625 326.0 L621 330.0 L617 326.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="331.0">job_name</text>
+<text class="type" x="1006" y="330.0" text-anchor="end">text</text>
+<line x1="572" y1="342" x2="1022" y2="342" stroke="#edf0f4"/>
+<path d="M621 354.0 L625 358.0 L621 362.0 L617 358.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="363.0">job_code</text>
+<text class="type" x="1006" y="362.0" text-anchor="end">text</text>
+<line x1="572" y1="374" x2="1022" y2="374" stroke="#edf0f4"/>
+<path d="M621 386.0 L625 390.0 L621 394.0 L617 390.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="395.0">recruitment_count</text>
+<text class="type" x="1006" y="394.0" text-anchor="end">int4</text>
+<line x1="572" y1="406" x2="1022" y2="406" stroke="#edf0f4"/>
+<path d="M621 418.0 L625 422.0 L621 426.0 L617 422.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="427.0">employment_type</text>
+<text class="type" x="1006" y="426.0" text-anchor="end">text</text>
+<line x1="572" y1="438" x2="1022" y2="438" stroke="#edf0f4"/>
+<path d="M621 450.0 L625 454.0 L621 458.0 L617 454.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="459.0">employment_type_raw</text>
+<text class="type" x="1006" y="458.0" text-anchor="end">text</text>
+<line x1="572" y1="470" x2="1022" y2="470" stroke="#edf0f4"/>
+<path d="M621 482.0 L625 486.0 L621 490.0 L617 486.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="491.0">salary_type</text>
+<text class="type" x="1006" y="490.0" text-anchor="end">text</text>
+<line x1="572" y1="502" x2="1022" y2="502" stroke="#edf0f4"/>
+<path d="M621 514.0 L625 518.0 L621 522.0 L617 518.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="523.0">salary_min</text>
+<text class="type" x="1006" y="522.0" text-anchor="end">int8</text>
+<line x1="572" y1="534" x2="1022" y2="534" stroke="#edf0f4"/>
+<path d="M621 546.0 L625 550.0 L621 554.0 L617 550.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="555.0">salary_max</text>
+<text class="type" x="1006" y="554.0" text-anchor="end">int8</text>
+<line x1="572" y1="566" x2="1022" y2="566" stroke="#edf0f4"/>
+<path d="M621 578.0 L625 582.0 L621 586.0 L617 582.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="587.0">salary_display</text>
+<text class="type" x="1006" y="586.0" text-anchor="end">text</text>
+<line x1="572" y1="598" x2="1022" y2="598" stroke="#edf0f4"/>
+<path d="M621 610.0 L625 614.0 L621 618.0 L617 614.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="619.0">education</text>
+<text class="type" x="1006" y="618.0" text-anchor="end">text</text>
+<line x1="572" y1="630" x2="1022" y2="630" stroke="#edf0f4"/>
+<path d="M621 642.0 L625 646.0 L621 650.0 L617 646.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="651.0">career</text>
+<text class="type" x="1006" y="650.0" text-anchor="end">text</text>
+<line x1="572" y1="662" x2="1022" y2="662" stroke="#edf0f4"/>
+<path d="M621 674.0 L625 678.0 L621 682.0 L617 678.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="683.0">industry</text>
+<text class="type" x="1006" y="682.0" text-anchor="end">text</text>
+<line x1="572" y1="694" x2="1022" y2="694" stroke="#edf0f4"/>
+<path d="M621 706.0 L625 710.0 L621 714.0 L617 710.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="715.0">address</text>
+<text class="type" x="1006" y="714.0" text-anchor="end">text</text>
+<line x1="572" y1="726" x2="1022" y2="726" stroke="#edf0f4"/>
+<path d="M621 738.0 L625 742.0 L621 746.0 L617 742.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="747.0">registration_at</text>
+<text class="type" x="1006" y="746.0" text-anchor="end">timestamptz</text>
+<line x1="572" y1="758" x2="1022" y2="758" stroke="#edf0f4"/>
+<path d="M621 770.0 L625 774.0 L621 778.0 L617 774.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="779.0">recruit_end_at</text>
+<text class="type" x="1006" y="778.0" text-anchor="end">timestamptz</text>
+<line x1="572" y1="790" x2="1022" y2="790" stroke="#edf0f4"/>
+<path d="M621 802.0 L625 806.0 L621 810.0 L617 806.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="811.0">source_code</text>
+<text class="type" x="1006" y="810.0" text-anchor="end">text</text>
+<line x1="572" y1="822" x2="1022" y2="822" stroke="#edf0f4"/>
+<path d="M621 834.0 L625 838.0 L621 842.0 L617 838.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="843.0">source_name</text>
+<text class="type" x="1006" y="842.0" text-anchor="end">text</text>
+<line x1="572" y1="854" x2="1022" y2="854" stroke="#edf0f4"/>
+<path d="M621 866.0 L625 870.0 L621 874.0 L617 870.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="875.0">source_url</text>
+<text class="type" x="1006" y="874.0" text-anchor="end">text</text>
+<line x1="572" y1="886" x2="1022" y2="886" stroke="#edf0f4"/>
+<path d="M621 898.0 L625 902.0 L621 906.0 L617 902.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="907.0">external_id</text>
+<text class="type" x="1006" y="906.0" text-anchor="end">text</text>
+<line x1="572" y1="918" x2="1022" y2="918" stroke="#edf0f4"/>
+<path d="M621 930.0 L625 934.0 L621 938.0 L617 934.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="939.0">collected_at</text>
+<text class="type" x="1006" y="938.0" text-anchor="end">timestamptz</text>
+<line x1="572" y1="950" x2="1022" y2="950" stroke="#edf0f4"/>
+<path d="M621 962.0 L625 966.0 L621 970.0 L617 966.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="637" y="971.0">verification_status</text>
+<text class="type" x="1006" y="970.0" text-anchor="end">text</text>
+<line x1="572" y1="982" x2="1022" y2="982" stroke="#edf0f4"/>
+<path d="M621 994.0 L625 998.0 L621 1002.0 L617 998.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="637" y="1003.0">raw_data</text>
+<text class="type" x="1006" y="1002.0" text-anchor="end">jsonb</text>
+<line x1="572" y1="1014" x2="1022" y2="1014" stroke="#edf0f4"/>
+<path d="M621 1026.0 L625 1030.0 L621 1034.0 L617 1030.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="637" y="1035.0">created_at</text>
+<text class="type" x="1006" y="1034.0" text-anchor="end">timestamptz</text>
+<line x1="572" y1="1046" x2="1022" y2="1046" stroke="#edf0f4"/>
+<path d="M621 1058.0 L625 1062.0 L621 1066.0 L617 1062.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="637" y="1067.0">updated_at</text>
+<text class="type" x="1006" y="1066.0" text-anchor="end">timestamptz</text>
+<rect x="1088" y="139" width="450" height="1038" rx="9" fill="#dfe5ee" opacity="0.4"/>
+<rect x="1088" y="136" width="450" height="1038" rx="9" fill="white" stroke="#d9e0e9"/>
+<rect x="1104" y="153" width="13" height="13" rx="2" fill="none" stroke="#748498"/>
+<path d="M1104 157 H1117 M1108 153 V166" stroke="#748498"/>
+<text x="1128" y="166" font-size="17" font-weight="600" fill="#1d2b3d">housing_transactions</text>
+<line x1="1088" y1="182" x2="1538" y2="182" stroke="#edf0f4"/>
+<path d="M1137 194.0 L1141 198.0 L1137 202.0 L1133 198.0 Z" fill="#596778" stroke="#596778"/>
+<text x="1100" y="202.0" font-size="10" font-weight="700" fill="#245ea8">PK</text>
+<text class="column" x="1153" y="203.0">id</text>
+<text class="type" x="1522" y="202.0" text-anchor="end">text</text>
+<line x1="1088" y1="214" x2="1538" y2="214" stroke="#edf0f4"/>
+<path d="M1137 226.0 L1141 230.0 L1137 234.0 L1133 230.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="1153" y="235.0">schema_version</text>
+<text class="type" x="1522" y="234.0" text-anchor="end">text</text>
+<line x1="1088" y1="246" x2="1538" y2="246" stroke="#edf0f4"/>
+<path d="M1137 258.0 L1141 262.0 L1137 266.0 L1133 262.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="267.0">province</text>
+<text class="type" x="1522" y="266.0" text-anchor="end">text</text>
+<line x1="1088" y1="278" x2="1538" y2="278" stroke="#edf0f4"/>
+<path d="M1137 290.0 L1141 294.0 L1137 298.0 L1133 294.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="299.0">city</text>
+<text class="type" x="1522" y="298.0" text-anchor="end">text</text>
+<line x1="1088" y1="310" x2="1538" y2="310" stroke="#edf0f4"/>
+<path d="M1137 322.0 L1141 326.0 L1137 330.0 L1133 326.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="331.0">district</text>
+<text class="type" x="1522" y="330.0" text-anchor="end">text</text>
+<line x1="1088" y1="342" x2="1538" y2="342" stroke="#edf0f4"/>
+<path d="M1137 354.0 L1141 358.0 L1137 362.0 L1133 358.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="363.0">legal_dong</text>
+<text class="type" x="1522" y="362.0" text-anchor="end">text</text>
+<line x1="1088" y1="374" x2="1538" y2="374" stroke="#edf0f4"/>
+<path d="M1137 386.0 L1141 390.0 L1137 394.0 L1133 390.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="395.0">full_address</text>
+<text class="type" x="1522" y="394.0" text-anchor="end">text</text>
+<line x1="1088" y1="406" x2="1538" y2="406" stroke="#edf0f4"/>
+<path d="M1137 418.0 L1141 422.0 L1137 426.0 L1133 422.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="427.0">jibun</text>
+<text class="type" x="1522" y="426.0" text-anchor="end">text</text>
+<line x1="1088" y1="438" x2="1538" y2="438" stroke="#edf0f4"/>
+<path d="M1137 450.0 L1141 454.0 L1137 458.0 L1133 454.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="459.0">road_address</text>
+<text class="type" x="1522" y="458.0" text-anchor="end">text</text>
+<line x1="1088" y1="470" x2="1538" y2="470" stroke="#edf0f4"/>
+<path d="M1137 482.0 L1141 486.0 L1137 490.0 L1133 486.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="1153" y="491.0">housing_type</text>
+<text class="type" x="1522" y="490.0" text-anchor="end">text</text>
+<line x1="1088" y1="502" x2="1538" y2="502" stroke="#edf0f4"/>
+<path d="M1137 514.0 L1141 518.0 L1137 522.0 L1133 518.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="523.0">building_name</text>
+<text class="type" x="1522" y="522.0" text-anchor="end">text</text>
+<line x1="1088" y1="534" x2="1538" y2="534" stroke="#edf0f4"/>
+<path d="M1137 546.0 L1141 550.0 L1137 554.0 L1133 550.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="555.0">exclusive_area_m2</text>
+<text class="type" x="1522" y="554.0" text-anchor="end">numeric</text>
+<line x1="1088" y1="566" x2="1538" y2="566" stroke="#edf0f4"/>
+<path d="M1137 578.0 L1141 582.0 L1137 586.0 L1133 582.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="587.0">floor</text>
+<text class="type" x="1522" y="586.0" text-anchor="end">int4</text>
+<line x1="1088" y1="598" x2="1538" y2="598" stroke="#edf0f4"/>
+<path d="M1137 610.0 L1141 614.0 L1137 618.0 L1133 614.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="619.0">built_year</text>
+<text class="type" x="1522" y="618.0" text-anchor="end">int4</text>
+<line x1="1088" y1="630" x2="1538" y2="630" stroke="#edf0f4"/>
+<path d="M1137 642.0 L1141 646.0 L1137 650.0 L1133 646.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="651.0">contract_date</text>
+<text class="type" x="1522" y="650.0" text-anchor="end">date</text>
+<line x1="1088" y1="662" x2="1538" y2="662" stroke="#edf0f4"/>
+<path d="M1137 674.0 L1141 678.0 L1137 682.0 L1133 678.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="1153" y="683.0">transaction_type</text>
+<text class="type" x="1522" y="682.0" text-anchor="end">text</text>
+<line x1="1088" y1="694" x2="1538" y2="694" stroke="#edf0f4"/>
+<path d="M1137 706.0 L1141 710.0 L1137 714.0 L1133 710.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="715.0">deposit</text>
+<text class="type" x="1522" y="714.0" text-anchor="end">int8</text>
+<line x1="1088" y1="726" x2="1538" y2="726" stroke="#edf0f4"/>
+<path d="M1137 738.0 L1141 742.0 L1137 746.0 L1133 742.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="747.0">monthly_rent</text>
+<text class="type" x="1522" y="746.0" text-anchor="end">int8</text>
+<line x1="1088" y1="758" x2="1538" y2="758" stroke="#edf0f4"/>
+<path d="M1137 770.0 L1141 774.0 L1137 778.0 L1133 774.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="779.0">renewal_type</text>
+<text class="type" x="1522" y="778.0" text-anchor="end">text</text>
+<line x1="1088" y1="790" x2="1538" y2="790" stroke="#edf0f4"/>
+<path d="M1137 802.0 L1141 806.0 L1137 810.0 L1133 806.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="811.0">contract_term</text>
+<text class="type" x="1522" y="810.0" text-anchor="end">text</text>
+<line x1="1088" y1="822" x2="1538" y2="822" stroke="#edf0f4"/>
+<path d="M1137 834.0 L1141 838.0 L1137 842.0 L1133 838.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="843.0">previous_deposit</text>
+<text class="type" x="1522" y="842.0" text-anchor="end">int8</text>
+<line x1="1088" y1="854" x2="1538" y2="854" stroke="#edf0f4"/>
+<path d="M1137 866.0 L1141 870.0 L1137 874.0 L1133 870.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="875.0">previous_monthly_rent</text>
+<text class="type" x="1522" y="874.0" text-anchor="end">int8</text>
+<line x1="1088" y1="886" x2="1538" y2="886" stroke="#edf0f4"/>
+<path d="M1137 898.0 L1141 902.0 L1137 906.0 L1133 902.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="907.0">source_code</text>
+<text class="type" x="1522" y="906.0" text-anchor="end">text</text>
+<line x1="1088" y1="918" x2="1538" y2="918" stroke="#edf0f4"/>
+<path d="M1137 930.0 L1141 934.0 L1137 938.0 L1133 934.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="939.0">source_name</text>
+<text class="type" x="1522" y="938.0" text-anchor="end">text</text>
+<line x1="1088" y1="950" x2="1538" y2="950" stroke="#edf0f4"/>
+<path d="M1137 962.0 L1141 966.0 L1137 970.0 L1133 966.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="971.0">source_url</text>
+<text class="type" x="1522" y="970.0" text-anchor="end">text</text>
+<line x1="1088" y1="982" x2="1538" y2="982" stroke="#edf0f4"/>
+<path d="M1137 994.0 L1141 998.0 L1137 1002.0 L1133 998.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="1003.0">external_id</text>
+<text class="type" x="1522" y="1002.0" text-anchor="end">text</text>
+<line x1="1088" y1="1014" x2="1538" y2="1014" stroke="#edf0f4"/>
+<path d="M1137 1026.0 L1141 1030.0 L1137 1034.0 L1133 1030.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="1035.0">collected_at</text>
+<text class="type" x="1522" y="1034.0" text-anchor="end">timestamptz</text>
+<line x1="1088" y1="1046" x2="1538" y2="1046" stroke="#edf0f4"/>
+<path d="M1137 1058.0 L1141 1062.0 L1137 1066.0 L1133 1062.0 Z" fill="white" stroke="#596778"/>
+<text class="column" x="1153" y="1067.0">verification_status</text>
+<text class="type" x="1522" y="1066.0" text-anchor="end">text</text>
+<line x1="1088" y1="1078" x2="1538" y2="1078" stroke="#edf0f4"/>
+<path d="M1137 1090.0 L1141 1094.0 L1137 1098.0 L1133 1094.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="1153" y="1099.0">raw_data</text>
+<text class="type" x="1522" y="1098.0" text-anchor="end">jsonb</text>
+<line x1="1088" y1="1110" x2="1538" y2="1110" stroke="#edf0f4"/>
+<path d="M1137 1122.0 L1141 1126.0 L1137 1130.0 L1133 1126.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="1153" y="1131.0">created_at</text>
+<text class="type" x="1522" y="1130.0" text-anchor="end">timestamptz</text>
+<line x1="1088" y1="1142" x2="1538" y2="1142" stroke="#edf0f4"/>
+<path d="M1137 1154.0 L1141 1158.0 L1137 1162.0 L1133 1158.0 Z" fill="#596778" stroke="#596778"/>
+<text class="column" x="1153" y="1163.0">updated_at</text>
+<text class="type" x="1522" y="1162.0" text-anchor="end">timestamptz</text>
+<line x1="72" y1="1240" x2="111" y2="1240" stroke="#3475c9" stroke-width="2.2"/>
+<text x="122" y="1245" font-size="13" fill="#55667b">실제 DB 외래키</text>
+<line x1="390" y1="1240" x2="429" y2="1240" stroke="#a8b5c5" stroke-width="1.7" stroke-dasharray="6 5"/>
+<text x="440" y="1245" font-size="13" fill="#55667b">코드상의 식별 관계 · DB 외래키 없음</text>
+<text x="72" y="1280" font-size="13" fill="#55667b">PK 기본키   UQ 고유 제약   ◆ 필수 값   ◇ NULL 허용</text>
+<text x="72" y="1311" font-size="13" fill="#68778b">직업·채용·주거는 각각 별도 테이블과 API로 제공</text>
+<text x="72" y="1337" font-size="13" fill="#68778b">세 테이블 사이에 선언된 외래키 없음 · 직업코드 연결은 후속 과제</text>
+</svg>
