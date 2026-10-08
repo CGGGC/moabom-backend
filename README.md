@@ -60,7 +60,7 @@ Supabase의 PostgreSQL에 직접 연결합니다. `app/config.py`에서 `DATABAS
 
 ![통합 공고·사용자·행동·선호도 테이블 구조](docs/images/database-schema.png)
 
-[확대 가능한 SVG](docs/images/database-schema.svg) · [직업·채용·주거 구조도](docs/images/domain-schema.png) · [DB 설계 상세](docs/database-design.md)
+![직업·채용·주거 테이블 구조](docs/images/domain-schema.png)
 
 | 설계 | 구현과 목적 |
 | --- | --- |
@@ -75,7 +75,7 @@ Supabase의 PostgreSQL에 직접 연결합니다. `app/config.py`에서 `DATABAS
 
 ## 수집·정제에서 API까지
 
-수집·정제 소스는 형제 폴더 `moabom-data`에 있습니다. 아래는 해당 코드와 저장 파일로 확인한 공동 작업 범위이며, 상세 파일·변환 예시는 [데이터 파이프라인 검토](docs/data-pipeline-review.md)에 정리했습니다.
+수집·정제 소스는 별도 `moabom-data` 폴더에 있습니다. 아래는 해당 코드와 저장 파일로 확인한 공동 작업 범위입니다. 수집·정제 원본 코드는 이 백엔드 저장소에 복사하지 않았으며, 파일명을 기준으로 처리 과정을 설명합니다.
 
 | 파이프라인 | 처리 방식 | 결과 |
 | --- | --- | --- |
@@ -91,7 +91,90 @@ Supabase의 PostgreSQL에 직접 연결합니다. `app/config.py`에서 `DATABAS
 
 통합 공고는 대학 공지·링커리어·위비티·청년정책·나라장터 등 15개 출처 결과를 9개 분류로 제공합니다. 현재 폴더에 없는 수집·taxonomy 변환 프로그램의 세부 구현은 팀원 제공 결과로 구분합니다. 저장 JSON에서 분류 근거와 신뢰도를 확인하고, 백엔드 importer에서 구형·v2 분류를 처리합니다.
 
-`scripts/import_json.py`는 `ON CONFLICT(id) DO UPDATE`로 재적재하며 전체 처리를 트랜잭션으로 감쌉니다. 검토 중 기존 ID의 `category_name`, `taxonomy_version`, `subcategories`가 갱신되지 않는 문제를 수정하고 PostgreSQL upsert SQL을 검사하는 회귀 테스트를 추가했습니다.
+`scripts/import_json.py`는 ID·제목·분류를 검사하고 구형 문자열 분류와 v2 객체 분류를 처리합니다. ISO 날짜를 DB 날짜 컬럼으로 변환하며, `ON CONFLICT(id) DO UPDATE`로 재적재하고 전체 처리를 트랜잭션으로 감쌉니다.
+
+### 수집·정제 코드 구성
+
+| 작업 | `moabom-data`의 파일 | 담당 단계 |
+| --- | --- | --- |
+| 직업 | `crawl_careernet_jobs.py` → `clean_career_jobs.py` → `import_career_jobs.py` | 동적 페이지 수집·필드 정제·직업 DB 적재 |
+| 채용 | `clean_jobs.py` → `import_job_postings.py` | 경제포털 원본 정제·채용 DB 적재 |
+| 주거 | `csvTrans.py` → `clean_housing.py` → `import_housing_transactions.py` | CSV 변환·계약일/주소/금액 정제·주거 DB 적재 |
+| 비교 표본 | `create_seoul_matched_samples.py`, `create_chuncheon_row_house_sample.py` | 주거 데이터 표본 생성 |
+| 정책 | `crawl_policy_pages.py` | 정책 페이지 원문 수집 |
+
+```mermaid
+flowchart LR
+    C[커리어넷 URL 12개] --> CR[Playwright + BeautifulSoup]
+    CR --> CC[직업 정보 정제]
+    CC --> CJ[(career_jobs)]
+    J[경제포털 채용 원본 50건] --> JC[직무·급여·날짜 정제]
+    JC --> JP[(job_postings)]
+    H[국토부 CSV 8개] --> HC[인코딩·단위·계약일·지역 정제]
+    HC --> CH[춘천 5630건]
+    HC --> SS[서울 비교 표본 1200건]
+    CH --> HT[(housing_transactions)]
+    SS --> HT
+    CJ --> API[직업·채용·주거 API]
+    JP --> API
+    HT --> API
+```
+
+### 직업 수집과 정제 사례
+
+`crawl_careernet_jobs.py`는 커리어넷 URL과 `seq` 값을 검증하고 `CAREER:CAREERNET:<seq>` ID를 만듭니다. Playwright로 렌더링된 DOM을 확보하고 BeautifulSoup으로 메뉴·스크립트·스타일을 제거한 뒤, ‘하는일’·‘핵심능력’·‘관련학과’·‘관련자격’ 사이의 본문을 추출합니다. 반복 문장과 쉼표 목록을 정리하고 출처·수집시각·원문을 함께 보존합니다.
+
+`clean_career_jobs.py`는 관련 학과·자격을 다시 추출하고 중첩 원문을 schema 2.0 필드로 정리합니다. ‘인공지능전문가’의 본문에서 컴퓨터공학과·전자공학과·응용소프트웨어공학과·수학과·통계학과를 학과 배열로, 수리·논리력·공간지각력을 능력 배열로 추출했습니다. 12건 모두 설명·학과·능력·적성·흥미가 있으며, 정제 코드 재실행 결과와 저장 JSON이 일치했습니다.
+
+### 채용 정제 사례
+
+직무명 끝의 직업코드를 분리하고 급여 문자열에서 금액 범위와 급여 종류를 추출합니다. 고용형태를 enum으로 통일하고 등록일을 KST ISO 날짜로 바꿉니다. 다음은 저장 결과의 일부 필드입니다.
+
+```json
+{
+  "job_name": "승용차 운전원(자가용 운전원)",
+  "job_code": "622901",
+  "employment_type": "FIXED_TERM",
+  "salary": {
+    "type": "HOURLY",
+    "minimum": 10320,
+    "maximum": 10320,
+    "display": "시급10,320원 이상 ~ 10,320원 이하"
+  },
+  "registration_at": "2026-07-31T00:00:00+09:00"
+}
+```
+
+50건 모두 급여 최솟값과 원문 URL이 있으며 재정제 결과가 저장 JSON과 일치했습니다. 해당 원본 50건을 만든 채용 수집 프로그램은 검토한 폴더에 없어 정제 단계부터 설명합니다.
+
+### 주거 정제와 비교 데이터
+
+CSV 변환은 CP949·EUC-KR·UTF-8·UTF-16 계열 인코딩과 안내문이 붙은 헤더를 처리합니다. 보증금·월세를 만원에서 원으로 바꾸고 `계약년월 + 계약일`을 실제 날짜로 복원합니다. 주소를 지역 필드로 나누고 주택·금액·날짜·원본 번호를 해시하여 ID를 생성합니다.
+
+| 주택유형 | 춘천 정제·적재 | 서울 전체 정제 | 서울 표본 적재 |
+| --- | ---: | ---: | ---: |
+| 아파트 | 1,981 | 68,848 | 300 |
+| 단독·다가구 | 3,189 | 74,799 | 300 |
+| 오피스텔 | 333 | 39,971 | 300 |
+| 연립·다세대 | 127 | 56,918 | 300 |
+| 합계 | **5,630** | **240,536** | **1,200** |
+
+정제 파일의 계약일 누락과 파일별 ID 중복은 0건입니다. 춘천 5,630건은 원본에서 재정제한 결과와 일치했습니다. 서울 표본은 춘천의 거래유형·면적·보증금·월세 구간을 기준으로 고정 seed로 추출하며, API는 DB에 적재된 거래를 조건별로 묶어 평균·중앙값을 제공합니다.
+
+### 통합 공고 결과
+
+| 출처 | 건수 | 출처 | 건수 |
+| --- | ---: | --- | ---: |
+| 온통청년 정책 API | 405 | 나라장터 입찰공고 API | 333 |
+| 강원대학교 일반공지 | 165 | 링커리어 | 140 |
+| 춘천 문화축제 API | 99 | 보조금24 API | 67 |
+| 위비티 | 60 | 한림대학교 일반공지 | 35 |
+| 춘천 공연행사 API | 29 | 자원봉사센터 공지 | 12 |
+| 경제포털 공공일자리 | 10 | 경제포털 채용정보 | 10 |
+| 배워봄 | 9 | 자원봉사 교육·행사 | 7 |
+| 춘천 관광지 API | 5 | 합계 | **1,386** |
+
+분류는 사업·창업 375·채용 298·교육 235·행사 159·지원 정책 147·공모전 106·대외활동 44·자원봉사 18·해커톤 4건입니다. 전 건에 taxonomy 2.0이 기록되어 있고 `details.taxonomy`에 기존 분류·매칭 단어·분류 이유·신뢰도를 보존합니다. 이 수치는 저장 결과물 집계이며, 현재 폴더에 없는 분류 프로그램의 구현을 직접 검증한 결과는 아닙니다.
 
 ## API와 추천 로직
 
@@ -123,8 +206,7 @@ Supabase의 PostgreSQL에 직접 연결합니다. `app/config.py`에서 `DATABAS
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env
-# .env의 DATABASE_URL을 본인의 DB 연결 정보로 작성
+# 프로젝트 루트에 .env 파일을 만들고 DATABASE_URL을 작성
 uvicorn app.main:app --reload
 ```
 
@@ -132,19 +214,7 @@ Swagger: `http://127.0.0.1:8000/docs` · DB 확인: `http://127.0.0.1:8000/healt
 
 `DATABASE_URL`은 Supabase Dashboard **Connect → Session pooler**의 값을 사용합니다. 이 백엔드는 DB 비밀번호로 접속하므로 프론트엔드용 Supabase URL·API 키 설치 예제를 적용할 필요는 없습니다. 현재 저장소에는 테이블을 생성하는 migration이 없어 기존 스키마가 준비된 DB가 필요합니다. `.env`는 Git에서 제외됩니다.
 
-```bash
-# 로컬 JSON 감사 · DB 접속 없음
-python3 scripts/audit_data.py --as-of 2026-10-08
-
-# importer 회귀 검사 · DB 접속 없음
-DATABASE_URL=postgresql+psycopg://offline:offline@localhost/offline .venv/bin/python -m unittest discover -s tests -v
-
-# 저장한 메타데이터에서 구조도 SVG 다시 생성
-python3 scripts/render_schema_diagram.py
-python3 scripts/render_schema_diagram.py --input docs/domain-schema-snapshot.json --output docs/images/domain-schema.svg
-```
-
-검증한 범위는 전체 코드 검토, 공고 1,386건 normalize, 회귀 테스트 3개, 직업·채용 정제 재현, 춘천 주거 정제 재현, 실제 DB 구조·건수 조회입니다. 읽기 전용 세션에서 목록·상세·추천·주거 비교 GET 라우터 함수를 실행했습니다. HTTP 종단 간 시험·POST 요청·재적재·부하 측정은 이번 검토에서 수행하지 않았습니다.
+2026-10-08 검토에서 실제 DB의 테이블·제약·인덱스·저장 건수를 읽기 전용으로 확인했습니다. 공고·직업·채용 목록/상세, 추천, 주거 조회/비교 GET 라우터 함수를 DB 세션에서 실행했고, 주거 적재 ID 집합이 춘천 전체와 서울 표본 파일에 일치함을 확인했습니다.
 
 ## 현재 한계와 후속 과제
 
@@ -152,5 +222,3 @@ python3 scripts/render_schema_diagram.py --input docs/domain-schema-snapshot.jso
 - 공고 상태는 수집 당시 값입니다. 로컬 `OPEN` 278건 중 240건은 검토일 전에 마감되어 자동 갱신·날짜 경계 정책이 필요합니다.
 - 주거의 서울 표본은 가격 변수까지 매칭하므로 지역 가격 차이를 대표하는 무작위 표본으로 해석할 수 없습니다. 서울 연립·다세대 표본은 재현 결과가 저장 파일과 달랐습니다.
 - DB migration, 수집·정제 소스 공개 링크, 빠진 수집 도구 의존성, 자동 수집·재시도·운영 지표를 보완할 수 있습니다.
-
-설계·기여 검토: [백엔드 검토안](docs/backend-portfolio-review.md) · 데이터 품질: [공고 감사](docs/data-audit.json), [파이프라인 감사](docs/data-pipeline-audit.json), [표본 재현 검사](docs/sampling-audit.json) · 실제 DB 확인: [스키마 메타데이터](docs/database-schema.json), [읽기 검증 결과](docs/live-read-validation.json)
