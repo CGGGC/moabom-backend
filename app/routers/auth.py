@@ -28,16 +28,26 @@ def signup(
     payload: UserSignupRequest,
     db: Session = Depends(get_db),
 ):
+    """
+    이메일, 비밀번호, 닉네임을 사용해 회원가입한다.
+
+    현재는 Supabase Auth가 아니라
+    public.users 테이블을 직접 사용하는 임시 인증 구조다.
+    """
+
     email = payload.email.strip().lower()
     nickname = payload.nickname.strip()
 
+    # 같은 이메일이 이미 등록되어 있는지 확인
     existing_user = db.execute(
-        text("""
-            select id
-            from public.users
-            where lower(email) = :email
-            limit 1
-        """),
+        text(
+            """
+            SELECT id
+            FROM public.users
+            WHERE LOWER(email) = :email
+            LIMIT 1
+            """
+        ),
         {
             "email": email,
         },
@@ -49,33 +59,36 @@ def signup(
             detail="이미 가입된 이메일입니다.",
         )
 
+    # 평문 비밀번호를 저장하지 않고 해시값으로 변환
     hashed_password = hash_password(
         payload.password
     )
 
     try:
         user = db.execute(
-            text("""
-                insert into public.users (
+            text(
+                """
+                INSERT INTO public.users (
                     email,
                     password_hash,
                     nickname,
                     created_at,
                     updated_at
                 )
-                values (
+                VALUES (
                     :email,
                     :password_hash,
                     :nickname,
-                    now(),
-                    now()
+                    NOW(),
+                    NOW()
                 )
-                returning
+                RETURNING
                     id,
                     email,
                     nickname,
                     created_at
-            """),
+                """
+            ),
             {
                 "email": email,
                 "password_hash": hashed_password,
@@ -85,13 +98,13 @@ def signup(
 
         db.commit()
 
-    except IntegrityError:
+    except IntegrityError as error:
         db.rollback()
 
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail="이미 가입된 이메일입니다.",
-        )
+        ) from error
 
     except Exception:
         db.rollback()
@@ -108,20 +121,28 @@ def login(
     payload: UserLoginRequest,
     db: Session = Depends(get_db),
 ):
+    """
+    이메일과 비밀번호를 검증해 로그인한다.
+
+    현재는 JWT를 발급하지 않고 사용자 정보만 반환한다.
+    """
+
     email = payload.email.strip().lower()
 
     user = db.execute(
-        text("""
-            select
+        text(
+            """
+            SELECT
                 id,
                 email,
                 nickname,
                 password_hash,
                 created_at
-            from public.users
-            where lower(email) = :email
-            limit 1
-        """),
+            FROM public.users
+            WHERE LOWER(email) = :email
+            LIMIT 1
+            """
+        ),
         {
             "email": email,
         },

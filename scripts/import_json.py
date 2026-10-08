@@ -23,24 +23,10 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from app.database import engine  # noqa: E402
 
-
 DATA_DIR = PROJECT_ROOT / "data"
 
 JSON_FILES = [
-    "chuncheon_tour.json",
-    "chuncheon_volunteer.json",
-    "chuncheon_culture.json",
-    "baewobom_courses.json",
-    "chuncheon_economy_jobs.json",
-    "chuncheon_events.json",
-
-    "g2b_chuncheon_bids.json",
-    "subsidy24_chuncheon.json",
-    "hallym_univ_opportunities.json",
-    "kangwon_univ_opportunities.json",
-
-    "linkareer_opportunities.json",
-    "wevity_opportunities.json",
+    "moabom_opportunities_v2.json",
 ]
 
 
@@ -53,6 +39,9 @@ opportunities = Table(
     Column("title", Text, nullable=False),
     Column("summary", Text),
     Column("category", Text, nullable=False),
+    Column("category_name", Text),
+    Column("taxonomy_version", Text),
+    Column("subcategories", JSON),
     Column("status", Text),
     Column("organization", JSON),
     Column("dates", JSON),
@@ -109,38 +98,64 @@ def normalize_item(item: dict[str, Any]) -> dict[str, Any]:
 
     item_id = item.get("id")
     title = item.get("title")
-    category = item.get("category")
+
+    category_data = item.get("category")
+
+    if isinstance(category_data, dict):
+        category_code = category_data.get("code")
+        category_name = category_data.get("name")
+    else:
+        # 구형 JSON 구조도 임시 호환
+        category_code = category_data
+        category_name = None
 
     if not item_id:
         raise ValueError("id가 없는 데이터입니다.")
 
     if not title:
-        raise ValueError(f"title이 없는 데이터입니다. id={item_id}")
+        raise ValueError(
+            f"title이 없는 데이터입니다. id={item_id}"
+        )
 
-    if not category:
-        raise ValueError(f"category가 없는 데이터입니다. id={item_id}")
+    if not category_code:
+        raise ValueError(
+            f"category.code가 없는 데이터입니다. id={item_id}"
+        )
 
     return {
         "id": str(item_id),
         "title": str(title),
         "summary": item.get("summary"),
-        "category": str(category).upper(),
+
+        "category": str(category_code).upper(),
+        "category_name": (
+            str(category_name)
+            if category_name
+            else None
+        ),
+        "taxonomy_version": item.get("taxonomy_version"),
+        "subcategories": item.get("subcategories") or [],
+
         "status": (
             str(item["status"]).upper()
             if item.get("status")
             else None
         ),
+
         "organization": item.get("organization") or {},
         "dates": dates,
         "targets": item.get("targets") or [],
         "topics": item.get("topics") or [],
         "location": item.get("location") or {},
+
         "thumbnail_url": item.get("thumbnail_url"),
         "source_logo_url": item.get("source_logo_url"),
         "source": item.get("source"),
         "source_url": item.get("source_url"),
+
         "details": item.get("details") or {},
         "raw_fields": item.get("raw_fields") or {},
+
         "published_at": parse_datetime(
             dates.get("published_at")
         ),
@@ -161,14 +176,11 @@ def normalize_item(item: dict[str, Any]) -> dict[str, Any]:
         ),
     }
 
-
 def load_json_file(file_path: Path) -> list[dict[str, Any]]:
     """JSON 파일을 읽고 최상위 구조가 배열인지 검사한다."""
 
     if not file_path.exists():
-        raise FileNotFoundError(
-            f"파일을 찾을 수 없습니다: {file_path}"
-        )
+        raise FileNotFoundError(f"파일을 찾을 수 없습니다: {file_path}")
 
     with file_path.open(
         mode="r",
@@ -177,9 +189,7 @@ def load_json_file(file_path: Path) -> list[dict[str, Any]]:
         data = json.load(json_file)
 
     if not isinstance(data, list):
-        raise ValueError(
-            f"{file_path.name}의 최상위 데이터가 배열이 아닙니다."
-        )
+        raise ValueError(f"{file_path.name}의 최상위 데이터가 배열이 아닙니다.")
 
     return data
 
@@ -205,15 +215,16 @@ def upsert_items(
         try:
             normalized_item = normalize_item(original_item)
 
-            statement = insert(opportunities).values(
-                **normalized_item
-            )
+            statement = insert(opportunities).values(**normalized_item)
 
             # 같은 id가 이미 있으면 아래 컬럼을 갱신
             update_columns = {
                 "title": statement.excluded.title,
                 "summary": statement.excluded.summary,
                 "category": statement.excluded.category,
+                "category_name": statement.excluded.category_name,
+                "taxonomy_version": statement.excluded.taxonomy_version,
+                "subcategories": statement.excluded.subcategories,
                 "status": statement.excluded.status,
                 "organization": statement.excluded.organization,
                 "dates": statement.excluded.dates,
@@ -227,18 +238,10 @@ def upsert_items(
                 "details": statement.excluded.details,
                 "raw_fields": statement.excluded.raw_fields,
                 "published_at": statement.excluded.published_at,
-                "recruit_start_at": (
-                    statement.excluded.recruit_start_at
-                ),
-                "recruit_end_at": (
-                    statement.excluded.recruit_end_at
-                ),
-                "activity_start_at": (
-                    statement.excluded.activity_start_at
-                ),
-                "activity_end_at": (
-                    statement.excluded.activity_end_at
-                ),
+                "recruit_start_at": (statement.excluded.recruit_start_at),
+                "recruit_end_at": (statement.excluded.recruit_end_at),
+                "activity_start_at": (statement.excluded.activity_start_at),
+                "activity_end_at": (statement.excluded.activity_end_at),
                 "collected_at": statement.excluded.collected_at,
                 "updated_at": datetime.now().astimezone(),
             }
@@ -253,9 +256,7 @@ def upsert_items(
 
         except (ValueError, TypeError) as error:
             failure_count += 1
-            print(
-                f"  [실패] id={item_id}: {error}"
-            )
+            print(f"  [실패] id={item_id}: {error}")
 
     return success_count, failure_count
 

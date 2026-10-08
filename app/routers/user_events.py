@@ -1,5 +1,3 @@
-# app/routers/user_events.py
-
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import text
 from sqlalchemy.orm import Session
@@ -14,6 +12,7 @@ router = APIRouter(
 )
 
 
+# 행동 종류별 추천 점수와 누적 횟수
 EVENT_SETTINGS = {
     "VIEW": {
         "score": 1,
@@ -54,17 +53,32 @@ def create_user_event(
     payload: UserEventCreate,
     db: Session = Depends(get_db),
 ):
-    # 1. 해당 공고가 실제로 존재하는지 확인
+    """
+    사용자의 공고 행동을 기록한다.
+
+    행동 종류:
+    - VIEW
+    - CLICK
+    - BOOKMARK
+    - APPLY
+
+    행동을 user_activity_events에 저장하고,
+    해당 사용자의 카테고리 선호 점수를 누적한다.
+    """
+
+    # 1. 요청된 공고가 실제로 존재하는지 확인
     opportunity = db.execute(
-        text("""
-            select
+        text(
+            """
+            SELECT
                 id,
                 title,
                 category
-            from public.opportunities
-            where id = :opportunity_id
-            limit 1
-        """),
+            FROM public.opportunities
+            WHERE id = :opportunity_id
+            LIMIT 1
+            """
+        ),
         {
             "opportunity_id": payload.opportunity_id,
         },
@@ -76,34 +90,38 @@ def create_user_event(
             detail="해당 공고를 찾을 수 없습니다.",
         )
 
-    event_setting = EVENT_SETTINGS[payload.event_type]
+    event_setting = EVENT_SETTINGS[
+        payload.event_type
+    ]
 
     try:
         # 2. 사용자 행동 원본 저장
         event = db.execute(
-            text("""
-                insert into public.user_activity_events (
+            text(
+                """
+                INSERT INTO public.user_activity_events (
                     user_id,
                     opportunity_id,
                     event_type,
                     category,
                     created_at
                 )
-                values (
+                VALUES (
                     :user_id,
                     :opportunity_id,
                     :event_type,
                     :category,
-                    now()
+                    NOW()
                 )
-                returning
+                RETURNING
                     id,
                     user_id,
                     opportunity_id,
                     event_type,
                     category,
                     created_at
-            """),
+                """
+            ),
             {
                 "user_id": str(payload.user_id),
                 "opportunity_id": payload.opportunity_id,
@@ -112,10 +130,11 @@ def create_user_event(
             },
         ).mappings().first()
 
-        # 3. 사용자별 카테고리 선호도 증가
+        # 3. 사용자별 카테고리 선호도 누적
         preference = db.execute(
-            text("""
-                insert into public.user_category_preferences (
+            text(
+                """
+                INSERT INTO public.user_category_preferences (
                     user_id,
                     category,
                     score,
@@ -125,7 +144,7 @@ def create_user_event(
                     apply_count,
                     updated_at
                 )
-                values (
+                VALUES (
                     :user_id,
                     :category,
                     :score,
@@ -133,33 +152,34 @@ def create_user_event(
                     :click_count,
                     :bookmark_count,
                     :apply_count,
-                    now()
+                    NOW()
                 )
-                on conflict (user_id, category)
-                do update set
+
+                ON CONFLICT (user_id, category)
+                DO UPDATE SET
                     score =
                         user_category_preferences.score
-                        + excluded.score,
+                        + EXCLUDED.score,
 
                     view_count =
                         user_category_preferences.view_count
-                        + excluded.view_count,
+                        + EXCLUDED.view_count,
 
                     click_count =
                         user_category_preferences.click_count
-                        + excluded.click_count,
+                        + EXCLUDED.click_count,
 
                     bookmark_count =
                         user_category_preferences.bookmark_count
-                        + excluded.bookmark_count,
+                        + EXCLUDED.bookmark_count,
 
                     apply_count =
                         user_category_preferences.apply_count
-                        + excluded.apply_count,
+                        + EXCLUDED.apply_count,
 
-                    updated_at = now()
+                    updated_at = NOW()
 
-                returning
+                RETURNING
                     user_id,
                     category,
                     score,
@@ -168,15 +188,20 @@ def create_user_event(
                     bookmark_count,
                     apply_count,
                     updated_at
-            """),
+                """
+            ),
             {
                 "user_id": str(payload.user_id),
                 "category": opportunity["category"],
                 "score": event_setting["score"],
                 "view_count": event_setting["view_count"],
                 "click_count": event_setting["click_count"],
-                "bookmark_count": event_setting["bookmark_count"],
-                "apply_count": event_setting["apply_count"],
+                "bookmark_count": event_setting[
+                    "bookmark_count"
+                ],
+                "apply_count": event_setting[
+                    "apply_count"
+                ],
             },
         ).mappings().first()
 
